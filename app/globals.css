@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════════════
+   TRAACKER — SINGLE SOURCE OF TRUTH
+   Change values in :root → every component updates automatically.
+   Never put brand colors, radii, or shadows in component files.
+   ══════════════════════════════════════════════════════════════ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── BRAND ──────────────────────────────────────────────── */
+  --primary:        #f97316;
+  --primary-hover:  #ea6a00;
+
+  /* ── BACKGROUNDS ────────────────────────────────────────── */
+  --bg:             #0a0a0a;
+  --bg-secondary:   #111111;
+  --bg-tertiary:    #1a1a1a;
+  --bg-elevated:    #222222;
+
+  /* ── TEXT ───────────────────────────────────────────────── */
+  --text:           #f0f0f0;
+  --text-muted:     #888888;
+  --text-subtle:    #555555;
+
+  /* ── BORDERS ────────────────────────────────────────────── */
+  --border:         rgba(255, 255, 255, 0.08);
+  --border-hover:   rgba(255, 255, 255, 0.16);
+
+  /* ── SEMANTIC ───────────────────────────────────────────── */
+  --success:        #22c55e;
+  --warning:        #f59e0b;
+  --error:          #ef4444;
+
+  /* ── RADIUS ─────────────────────────────────────────────── */
+  --radius-sm:      8px;
+  --radius-md:      12px;
+  --radius-lg:      16px;
+  --radius-xl:      24px;
+  --radius-2xl:     32px;
+
+  /* ── SHADOWS (tuned for the orange brand) ───────────────── */
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:      0 4px 16px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.3);
+  --shadow-lg:      0 8px 32px rgba(0,0,0,0.6), 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-xl:      0 20px 60px rgba(0,0,0,0.7), 0 8px 24px rgba(0,0,0,0.5);
+  --shadow-glow:    0 0 50px rgba(249, 115, 22, 0.4), 0 0 100px rgba(249, 115, 22, 0.15);
+  --shadow-card:    0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+
+  /* ── EASING ─────────────────────────────────────────────── */
+  --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:       150ms;
+  --dur-base:       250ms;
+  --dur-slow:       400ms;
+  --dur-slower:     700ms;
+
+  /* ── Z-INDEX ─────────────────────────────────────────────── */
+  --z-raised:       10;
+  --z-dropdown:     100;
+  --z-sticky:       200;
+  --z-overlay:      300;
+  --z-modal:        400;
+  --z-toast:        500;
 }
+
+/* ══════════════════════════════════════════════════════════════
+   TAILWIND v4 THEME — generates bg-*, text-*, border-*, font-*
+   utilities that point to the CSS variables above.
+   Change a value in :root and all Tailwind utilities update.
+   ══════════════════════════════════════════════════════════════ */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Typography */
+  --font-display: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
+  --font-body:    var(--font-manrope), "Manrope", system-ui, sans-serif;
+
+  /* Colors */
+  --color-bg:           var(--bg);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary:  var(--bg-tertiary);
+  --color-bg-elevated:  var(--bg-elevated);
+  --color-text:         var(--text);
+  --color-muted:        var(--text-muted);
+  --color-subtle:       var(--text-subtle);
+  --color-primary:      var(--primary);
+  --color-border:       var(--border);
+  --color-border-hover: var(--border-hover);
+  --color-success:      var(--success);
+  --color-warning:      var(--warning);
+  --color-error:        var(--error);
+
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ══════════════════════════════════════════════════════════════
+   BASE
+   ══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+::selection { background: var(--primary); color: #fff; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
+
+/* ══════════════════════════════════════════════════════════════
+   TEXTURE — grain + architectural grid, always on globally
+   ══════════════════════════════════════════════════════════════ */
+
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.028;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.page-grid {
+  background-image: linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 25% 100%;
+  background-attachment: fixed;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   UTILITIES — reference CSS vars, update everywhere on rebrand
+   ══════════════════════════════════════════════════════════════ */
+
+/* Gradient headline — uses --primary */
+.gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 55%, var(--primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer sweep — one word in hero only, never more */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--primary) 0%,
+    color-mix(in srgb, var(--primary) 60%, white) 40%,
+    var(--primary) 60%,
+    color-mix(in srgb, var(--primary) 70%, black) 80%,
+    var(--primary) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer-sweep 3.5s linear infinite;
+}
+
+@keyframes shimmer-sweep {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ─── CTA BUTTONS — pure CSS, no JS hover handlers needed ── */
+/* Change --primary in :root → every button updates.          */
+.btn-primary {
+  background: var(--primary);
+  transition: background var(--dur-base) var(--ease-out),
+              box-shadow  var(--dur-base) var(--ease-out),
+              transform   var(--dur-base) var(--ease-out);
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--primary) 30%, transparent);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: border-color var(--dur-base) var(--ease-out),
+              background   var(--dur-base) var(--ease-out);
+}
+.btn-outline:hover {
+  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Default dark card — hover border/glow uses --primary automatically */
+.card-dark {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  transition: border-color var(--dur-base) var(--ease-out),
+              box-shadow   var(--dur-base) var(--ease-out);
+}
+.card-dark:hover {
+  border-color: color-mix(in srgb, var(--primary) 35%, transparent);
+  box-shadow: 0 8px 40px color-mix(in srgb, var(--primary) 8%, transparent);
+}
+
+/* Brand glow — box shadow references --primary indirectly via --shadow-glow */
+.brand-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Logo marquee */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
