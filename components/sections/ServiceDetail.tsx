@@ -6,6 +6,7 @@ import Link from "next/link"
 import { ArrowRight, CheckCircle2, Search, TrendingUp, Route, FileText, Headphones, LucideIcon } from "lucide-react"
 import type { Service } from "@/lib/services"
 import StickyScrollProcess from "./StickyScrollProcess"
+import { TiltCard } from "./TiltCard"
 
 const iconMap: Record<string, LucideIcon> = {
   "load-sourcing": Search,
@@ -61,27 +62,32 @@ export default function ServiceDetail({ service }: { service: Service }) {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {service.features.map((feature) => (
-                <motion.div
-                  key={feature.title}
-                  variants={fadeUp}
-                  className="card-dark rounded-2xl p-6 flex flex-col gap-3"
-                >
-                  <div
-                    className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
-                    style={{
-                      background: "color-mix(in srgb, var(--primary) 10%, transparent)",
-                      border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)",
-                    }}
-                  >
-                    <Icon size={18} style={{ color: "var(--primary)" }} />
+             {service.features.map((feature) => (
+              <motion.div key={feature.title} variants={fadeUp}>
+                <TiltCard>
+                  <div className="card-dark rounded-2xl p-6 flex flex-col gap-3 transition-transform duration-300">
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0"
+                      style={{
+                        background: "color-mix(in srgb, var(--primary) 10%, transparent)",
+                        border: "1px solid color-mix(in srgb, var(--primary) 20%, transparent)",
+                      }}
+                    >
+                      <Icon size={18} style={{ color: "var(--primary)" }} />
+                    </div>
+
+                    <div>
+                      <h3 className="text-text font-bold text-base font-display mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted text-sm leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-text font-bold text-base font-display mb-1">{feature.title}</h3>
-                    <p className="text-muted text-sm leading-relaxed">{feature.description}</p>
-                  </div>
-                </motion.div>
-              ))}
+                </TiltCard>
+              </motion.div>
+            ))}
             </div>
           </Section>
         </div>

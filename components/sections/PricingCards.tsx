@@ -112,6 +112,36 @@ export default function PricingCards() {
                   ? { borderColor: "var(--primary)" }
                   : undefined
               }
+              onMouseMove={(e) => {
+    const rect = e.currentTarget.getBoundingClientRect()
+
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+
+    const rotateX = ((y - centerY) / centerY) * -10
+    const rotateY = ((x - centerX) / centerX) * 10
+
+    e.currentTarget.style.transform = `
+      perspective(1000px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.03)
+    `
+
+    // glow follow
+    e.currentTarget.style.setProperty("--glow-x", `${x}px`)
+    e.currentTarget.style.setProperty("--glow-y", `${y}px`)
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.transform =
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)"
+
+    e.currentTarget.style.setProperty("--glow-x", `50%`)
+    e.currentTarget.style.setProperty("--glow-y", `50%`)
+  }}
             >
               {/* Popular badge */}
               {plan.note && (

@@ -7,8 +7,8 @@ import { ArrowRight, Shield, Clock, TrendingUp, Truck } from "lucide-react"
 const stats = [
   { value: 12400, suffix: "+", label: "Loads Dispatched" },
   { value: 98, suffix: "%", label: "On-Time Delivery" },
-  { value: 5, suffix: "%", label: "Flat Rate Per Load" },
-  { value: 24, suffix: "/7", label: "Dispatcher Support" },
+  { value: 5, suffix: "%", label: "Flat Rate" },
+  { value: 24, suffix: "/7", label: "Support" },
 ]
 
 function AnimatedNumber({
@@ -50,289 +50,265 @@ function AnimatedNumber({
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: containerRef })
-  const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -60])
-  const videoY = useTransform(scrollYProgress, [0, 1], [0, 80])
+  const videoY = useTransform(scrollYProgress, [0, 1], [0, 120])
 
   return (
     <section
       ref={containerRef}
       className="relative min-h-screen flex items-center overflow-hidden bg-bg"
     >
-      {/* Subtle grid pattern */}
-      <div
-        className="absolute inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundSize: "80px 80px",
-        }}
-      />
+      {/* ── FULL-BLEED VIDEO BACKGROUND ── */}
+      <motion.div
+        style={{ y: videoY }}
+        className="absolute inset-0 z-0 pointer-events-none scale-110"
+      >
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
 
-      {/* Ambient glow — top left */}
+        {/* Dark overlay so text stays legible */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+             "linear-gradient(105deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.65) 100%)"
+          }}
+        />
+
+        {/* Bottom fade to match page bg */}
+        <div
+          className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
+          style={{
+            background: "linear-gradient(to top, var(--bg) 0%, transparent 100%)",
+          }}
+        />
+      </motion.div>
+
+      {/* Ambient glow — primary tint top-left */}
       <div
         className="absolute z-0 pointer-events-none"
         style={{
-          top: "-20%",
-          left: "-10%",
-          width: "60%",
-          height: "70%",
+          top: "-10%",
+          left: "-5%",
+          width: "50%",
+          height: "60%",
           background:
-            "radial-gradient(ellipse, color-mix(in srgb, var(--primary) 8%, transparent) 0%, transparent 70%)",
+            "radial-gradient(ellipse, color-mix(in srgb, var(--primary) 10%, transparent) 0%, transparent 70%)",
         }}
       />
 
-      {/* Main layout */}
-      <motion.div
-        style={{ y: contentY }}
-        className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-16 xl:px-20"
-      >
-        <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center min-h-screen pt-32 pb-24 lg:pt-28 lg:pb-0">
+      {/* ── MAIN LAYOUT — left-aligned content, full width ── */}
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-16 xl:px-20">
+        <div className="flex flex-col justify-center min-h-screen pt-32 pb-24 lg:pt-0 lg:pb-0 max-w-3xl">
 
-          {/* ── LEFT COLUMN ── */}
-          <div className="flex flex-col justify-center">
-
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 self-start mb-8"
-            >
-              <div
-                className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase"
-                style={{
-                  border: "1px solid color-mix(in srgb, var(--primary) 40%, transparent)",
-                  background: "color-mix(in srgb, var(--primary) 10%, transparent)",
-                  color: "var(--primary)",
-                  letterSpacing: "0.12em",
-                }}
-              >
-                <span
-                  className="w-1.5 h-1.5 rounded-full"
-                  style={{ background: "var(--primary)" }}
-                />
-                U.S. Truck Dispatch
-              </div>
-            </motion.div>
-
-            {/* Headline line 1 */}
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                initial={{ y: 120, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display font-extrabold leading-[0.96] tracking-tight text-text"
-                style={{ fontSize: "clamp(3.2rem, 7vw, 6rem)" }}
-              >
-                Keep Your
-              </motion.h1>
-            </div>
-
-            {/* Headline line 2 */}
-            <div className="overflow-hidden mb-2">
-              <motion.h1
-                initial={{ y: 120, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
-                className="font-display font-extrabold leading-[0.96] tracking-tight text-text"
-                style={{ fontSize: "clamp(3.2rem, 7vw, 6rem)" }}
-              >
-                Trucks{" "}
-                <span className="gradient-text">Moving.</span>
-              </motion.h1>
-            </div>
-
-            {/* Divider line */}
-            <motion.div
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ scaleX: 1, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="origin-left my-8"
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="inline-flex items-center gap-2 self-start mb-8"
+          >
+            <div
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold uppercase"
               style={{
-                height: "1px",
-                background:
-                  "linear-gradient(90deg, color-mix(in srgb, var(--primary) 50%, transparent) 0%, transparent 100%)",
+                border: "1px solid color-mix(in srgb, var(--primary) 40%, transparent)",
+                background: "color-mix(in srgb, var(--primary) 10%, transparent)",
+                color: "var(--primary)",
+                letterSpacing: "0.12em",
               }}
-            />
-
-            {/* Sub-headline */}
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.65 }}
-              className="text-lg leading-relaxed mb-10 max-w-lg text-muted"
             >
-              We secure high-paying loads, negotiate hard, and manage everything —
-              so you focus on the road.{" "}
-              <span style={{ color: "var(--primary)", fontWeight: 500 }}>
-                Only 5% per load, no upfront cost.
-              </span>
-            </motion.p>
+              <span
+                className="w-1.5 h-1.5 rounded-full"
+                style={{ background: "var(--primary)" }}
+              />
+              U.S. Truck Dispatch
+            </div>
+          </motion.div>
 
-            {/* CTAs */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.8 }}
-              className="flex flex-col sm:flex-row items-start gap-4 mb-14"
+          {/* Headline */}
+          <div className="overflow-hidden mb-2">
+            <motion.h1
+              initial={{ y: 120, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display font-extrabold leading-[0.96] tracking-tight"
+             style={{ fontSize: "clamp(3.2rem, 7vw, 6rem)", color: "var(--text-on-dark)" }}
             >
-              <a
-                href="#contact"
-                className="group btn-primary inline-flex items-center gap-3 font-display font-bold text-sm tracking-wide rounded-xl"
-                style={{
-                  color: "#ffffff",
-                  padding: "14px 28px",
-                }}
-              >
-                Dispatch My Truck
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform duration-200"
-                />
-              </a>
-
-              <a
-                href="#how-it-works"
-                className="btn-outline inline-flex items-center gap-2 font-display font-semibold text-sm tracking-wide rounded-xl text-text"
-                style={{ padding: "14px 28px" }}
-              >
-                See How It Works
-              </a>
-            </motion.div>
-
-            {/* Trust pills */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-              className="flex flex-wrap gap-3"
+              Keep Your
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden mb-2">
+            <motion.h1
+              initial={{ y: 120, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+              className="font-display font-extrabold leading-[0.96] tracking-tight text-white"
+              style={{ fontSize: "clamp(3.2rem, 7vw, 6rem)" }}
             >
-              {[
-                { icon: Shield, label: "No upfront cost" },
-                { icon: Truck, label: "All equipment types" },
-                { icon: Clock, label: "24/7 support" },
-              ].map(({ icon: Icon, label }) => (
-                <div
-                  key={label}
-                  className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-subtle"
-                  style={{
-                    background: "var(--bg-secondary)",
-                    border: "1px solid var(--border)",
-                  }}
-                >
-                  <Icon size={12} style={{ color: "var(--primary)" }} />
-                  {label}
-                </div>
-              ))}
-            </motion.div>
+              Trucks{" "}
+              <span className="gradient-text">Moving.</span>
+            </motion.h1>
           </div>
 
-          {/* ── RIGHT COLUMN — Video frame ── */}
+          {/* Divider */}
           <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative hidden lg:block"
+            initial={{ scaleX: 0, opacity: 0 }}
+            animate={{ scaleX: 1, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="origin-left my-8"
+            style={{
+              height: "1px",
+              background:
+                "linear-gradient(90deg, color-mix(in srgb, var(--primary) 50%, transparent) 0%, transparent 100%)",
+            }}
+          />
+
+          {/* Sub-headline */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.65 }}
+            className="text-lg leading-relaxed mb-10 max-w-lg"
+           style={{ color: "var(--text-muted-on-dark)" }}
           >
-            {/* Video container */}
-            <motion.div
-              className="relative overflow-hidden"
-              style={{
-                y: videoY,
-                borderRadius: "20px",
-                border: "1px solid var(--border-hover)",
-                aspectRatio: "9/11",
-                maxHeight: "680px",
-              }}
+            We secure high-paying loads, negotiate hard, and manage everything —
+            so you focus on the road.{" "}
+            <span style={{ color: "var(--primary)", fontWeight: 500 }}>
+              Only 5% per load, no upfront cost.
+            </span>
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.8 }}
+            className="flex flex-col sm:flex-row items-start gap-4 mb-14"
+          >
+            <a
+              href="#contact"
+              className="group btn-primary inline-flex items-center gap-3 font-display font-bold text-sm tracking-wide rounded-xl"
+             style={{ color: "var(--text-on-dark)", padding: "14px 28px" }}
             >
-              <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className="w-full h-full object-cover"
-                aria-hidden="true"
-              >
-                <source src="/hero-video.mp4" type="video/mp4" />
-              </video>
-
-              {/* Overlay — always dark since it sits on a video */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.55) 100%)",
-                }}
+              Dispatch My Truck
+              <ArrowRight
+                size={16}
+                className="group-hover:translate-x-1 transition-transform duration-200"
               />
+            </a>
 
-              {/* Floating stat card */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: 1.2 }}
-                className="absolute bottom-6 left-6 right-6 rounded-xl p-4"
+            <a
+              href="#how-it-works"
+              className="btn-outline inline-flex items-center gap-2 font-display font-semibold text-sm tracking-wide rounded-xl"
+             style={{ padding: "14px 28px", color: "var(--text-on-dark)" }}
+            >
+              See How It Works
+            </a>
+          </motion.div>
+
+          {/* Trust pills */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 1 }}
+            className="flex flex-wrap gap-3"
+          >
+            {[
+              { icon: Shield, label: "No upfront cost" },
+              { icon: Truck, label: "All equipment types" },
+              { icon: Clock, label: "24/7 support" },
+            ].map(({ icon: Icon, label }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs"
                 style={{
-                  background: "var(--bg-elevated)",
-                  border: "1px solid color-mix(in srgb, var(--primary) 25%, transparent)",
-                  backdropFilter: "blur(16px)",
+                  background: "color-mix(in srgb, var(--primary) 8%, transparent)",
+border: "1px solid var(--border-hover)",
+                  color: "var(--text-on-dark)",
+                  backdropFilter: "blur(8px)",
                 }}
               >
-                <p
-                  className="text-xs font-semibold uppercase mb-3"
-                  style={{
-                    color: "var(--primary)",
-                    letterSpacing: "0.12em",
-                  }}
-                >
-                  Live Performance
-                </p>
-                <div className="grid grid-cols-2 gap-4">
-                  {stats.map((s) => (
-                    <div key={s.label}>
-                      <p className="text-xl font-extrabold font-display mb-0.5 text-text">
-                        <AnimatedNumber
-                          value={s.value}
-                          suffix={s.suffix}
-                        />
-                      </p>
-                      <p className="text-xs text-subtle">{s.label}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Top-right badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 1.4 }}
-                className="absolute top-5 right-5 flex items-center gap-2 px-3 py-2 rounded-full"
-                style={{
-                  background: "var(--bg-elevated)",
-                  border: "1px solid color-mix(in srgb, var(--primary) 30%, transparent)",
-                  backdropFilter: "blur(12px)",
-                }}
-              >
-                <TrendingUp size={12} style={{ color: "var(--primary)" }} />
-                <span
-                  className="text-xs font-semibold"
-                  style={{ color: "var(--primary)" }}
-                >
-                  5% Flat Rate
-                </span>
-              </motion.div>
-            </motion.div>
-
-            {/* Bottom-right decorative glow */}
-            <div
-              className="absolute -bottom-6 -right-6 w-32 h-32 rounded-full pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(circle, color-mix(in srgb, var(--primary) 12%, transparent) 0%, transparent 70%)",
-                filter: "blur(20px)",
-              }}
-            />
+                <Icon size={12} style={{ color: "var(--primary)" }} />
+                {label}
+              </div>
+            ))}
           </motion.div>
         </div>
+      </div>
+
+      {/* ── OWNER CARD — fixed to right side, like the reference ── */}
+      <motion.div
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.9, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
+       className="absolute right-10 bottom-12 z-20 hidden lg:flex flex-col items-center gap-4"
+      >
+        {/* Circle photo */}
+        <div
+          className="relative"
+          style={{
+            width: "110px",
+            height: "110px",
+          }}
+        >
+          {/* Glowing ring */}
+          <div
+            className="absolute -inset-[3px] rounded-full"
+            style={{
+              background: "linear-gradient(135deg, var(--primary), transparent 70%)",
+            }}
+          />
+          <div
+            className="relative w-full h-full rounded-full overflow-hidden"
+            style={{
+             border: "2px solid var(--border-hover)"
+            }}
+          >
+            {/* Placeholder — swap src for owner's real photo */}
+            <img
+              src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=300&q=80"
+              alt="Owner"
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+
+          {/* Online dot */}
+          <span
+            className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full"
+            style={{
+             background: "var(--success)",
+             border: "2px solid var(--bg)"
+            }}
+          />
+        </div>
+
+        {/* Name + role card */}
+        <div
+          className="px-4 py-3 rounded-xl text-center"
+          style={{
+           background: "color-mix(in srgb, var(--bg) 40%, transparent)",
+            border: "1px solid color-mix(in srgb, var(--primary) 25%, transparent)",
+            backdropFilter: "blur(16px)",
+            minWidth: "160px",
+          }}
+        >
+          <p className="text-sm font-bold leading-tight" style={{ color: "var(--text-on-dark)" }}>Shaan Soni</p>
+          <p className="text-xs mt-0.5" style={{ color: "var(--primary)" }}>
+            Head Dispatcher
+          </p>
+          <p className="text-xs mt-0.5"  style={{ color: "var(--text-muted-on-dark)" }}>
+            8 yrs experience
+          </p>
+        </div>
+       
       </motion.div>
 
       {/* Scroll indicator */}
@@ -346,7 +322,7 @@ export default function Hero() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           className="w-6 h-10 rounded-full flex items-start justify-center pt-2"
-          style={{ border: "1px solid var(--border-hover)" }}
+          style={{border: "1px solid var(--border-hover)" }}
         >
           <div
             className="w-1 h-2 rounded-full"

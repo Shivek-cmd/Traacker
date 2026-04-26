@@ -37,7 +37,7 @@ export default function WhyUs() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section id="why-us" ref={ref} className="py-28 relative overflow-hidden bg-bg">
+    <section id="why-us" ref={ref} className="py-28 relative overflow-hidden bg-bg-secondary">
       {/* Background grid — desktop only */}
       <div
         className="absolute inset-0 pointer-events-none hidden md:block"

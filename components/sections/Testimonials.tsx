@@ -179,7 +179,7 @@ export default function Testimonials() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section id="testimonials" ref={ref} className="py-28 relative bg-bg-secondary overflow-hidden">
+    <section id="testimonials" ref={ref} className="py-28 relative bg-bg overflow-hidden">
       <div
         className="absolute top-0 left-0 right-0 h-px"
         style={{
@@ -236,10 +236,6 @@ export default function Testimonials() {
               {/* Corner glow */}
               <div
                 className="absolute -top-12 -right-12 w-40 h-40 rounded-full pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(circle, color-mix(in srgb, var(--primary) 15%, transparent) 0%, transparent 70%)",
-                }}
                 aria-hidden="true"
               />
 

@@ -67,7 +67,7 @@ export default function ServiceCardScroll({
   }
 
   return (
-    <section id="services" ref={sectionRef} className="py-28 relative bg-bg overflow-hidden">
+    <section id="services" ref={sectionRef} className="py-28 relative bg-bg-secondary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {showHeader && (
           <motion.div

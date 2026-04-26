@@ -8,8 +8,8 @@
 
 :root {
   /* ── BRAND ──────────────────────────────────────────────── */
-  --primary:        #705200;
-  --primary-hover:  #4d3800;
+--primary:        #b38a1a;
+--primary-hover:  #8c6b14;
 
   /* ── ALWAYS-ON-DARK TEXT (Hero video, dark overlays, etc.) ─
      These NEVER change with the theme — always white-toned.
