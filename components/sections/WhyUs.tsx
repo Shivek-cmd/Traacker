@@ -42,8 +42,8 @@ export default function WhyUs() {
       <div
         className="absolute inset-0 pointer-events-none hidden md:block"
         style={{
-          backgroundImage:
-            "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
+          // backgroundImage:
+          //   "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
         aria-hidden="true"

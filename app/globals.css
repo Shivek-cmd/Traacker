@@ -8,8 +8,8 @@
 
 :root {
   /* ── BRAND ──────────────────────────────────────────────── */
-  --primary:        #f97316;
-  --primary-hover:  #ea6a00;
+  --primary:        #705200;
+  --primary-hover:  #4d3800;
 
   /* ── ALWAYS-ON-DARK TEXT (Hero video, dark overlays, etc.) ─
      These NEVER change with the theme — always white-toned.
@@ -60,7 +60,7 @@
   --shadow-md:   0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
   --shadow-lg:   0 8px 32px rgba(0,0,0,0.1),  0 4px 12px rgba(0,0,0,0.06);
   --shadow-xl:   0 20px 60px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08);
-  --shadow-glow: 0 0 50px rgba(249,115,22,0.2), 0 0 100px rgba(249,115,22,0.08);
+  --shadow-glow: 0 0 50px rgba(112,82,0,0.15), 0 0 100px rgba(112,82,0,0.06);
   --shadow-card: 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.8);
 
   /* ── EASING ─────────────────────────────────────────────── */
@@ -110,7 +110,7 @@
   --shadow-md:   0 4px 16px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.3);
   --shadow-lg:   0 8px 32px rgba(0,0,0,0.6), 0 4px 12px rgba(0,0,0,0.4);
   --shadow-xl:   0 20px 60px rgba(0,0,0,0.7), 0 8px 24px rgba(0,0,0,0.5);
-  --shadow-glow: 0 0 50px rgba(249,115,22,0.4), 0 0 100px rgba(249,115,22,0.15);
+  --shadow-glow: 0 0 50px rgba(112,82,0,0.4), 0 0 100px rgba(112,82,0,0.15);
   --shadow-card: 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
@@ -204,18 +204,15 @@ body {
    UTILITIES
    ══════════════════════════════════════════════════════════════ */
 
-/* Gradient headline — var(--text) adapts: near-black in light, white in dark */
 .gradient-text {
-  background: linear-gradient(135deg, var(--text) 0%, var(--primary) 55%, var(--primary-hover) 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--primary) 80%, var(--primary-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Gradient headline for always-dark sections (Hero video overlay).
-   First stop is always white regardless of theme mode.             */
 .gradient-text-on-dark {
-  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 55%, var(--primary-hover) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, var(--primary) 70%, var(--primary-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -265,8 +262,6 @@ body {
   background: color-mix(in srgb, var(--primary) 6%, transparent);
 }
 
-/* Outline button for always-dark sections (Hero, dark overlays).
-   Always white border + text regardless of theme mode.           */
 .btn-outline-on-dark {
   border: 1px solid rgba(255, 255, 255, 0.28);
   color: rgba(255, 255, 255, 0.92);
