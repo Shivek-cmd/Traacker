@@ -26,12 +26,12 @@ export const services: Service[] = [
     category: "DISPATCH",
     image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Load Sourcing & Booking — Tracckar Dispatch",
+      title: "Load Sourcing & Booking — Traakar Dispatch",
       description:
-        "Tracckar sources high-paying freight from DAT, Truckstop.com, and direct broker relationships. Your truck stays loaded — every week.",
+        "Traakar sources high-paying freight from DAT, Truckstop.com, and direct broker relationships. Your truck stays loaded — every week.",
     },
     longDescription:
-      "Finding quality freight is a full-time job. Between monitoring load boards, chasing brokers, and sifting through low-rate offers, drivers lose hours every week — and those hours aren't paid. Tracckar's dispatchers work load boards 24/7 so you don't have to. We focus on loads that fit your lanes, equipment, and rate expectations.",
+      "Finding quality freight is a full-time job. Between monitoring load boards, chasing brokers, and sifting through low-rate offers, drivers lose hours every week — and those hours aren't paid. Traakar's dispatchers work load boards 24/7 so you don't have to. We focus on loads that fit your lanes, equipment, and rate expectations.",
     features: [
       {
         title: "Multi-Board Coverage",
@@ -101,12 +101,12 @@ export const services: Service[] = [
     category: "RATES",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Rate Negotiation — Tracckar Dispatch",
+      title: "Rate Negotiation — Traakar Dispatch",
       description:
-        "Tracckar negotiates every load rate directly with brokers. We push back on lowball offers and secure the best per-mile rate for your truck.",
+        "Traakar negotiates every load rate directly with brokers. We push back on lowball offers and secure the best per-mile rate for your truck.",
     },
     longDescription:
-      "The rate you accept on day one sets the standard brokers use for every load after. Most drivers — understandably — accept the first number to get moving. Tracckar dispatchers negotiate from a position of knowledge: current market rates, lane averages, and load-to-truck ratios. We push back so you don't have to.",
+      "The rate you accept on day one sets the standard brokers use for every load after. Most drivers — understandably — accept the first number to get moving. Traakar dispatchers negotiate from a position of knowledge: current market rates, lane averages, and load-to-truck ratios. We push back so you don't have to.",
     features: [
       {
         title: "Real-Time Market Intelligence",
@@ -172,12 +172,12 @@ export const services: Service[] = [
     category: "ROUTING",
     image: "https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Route Optimization — Tracckar Dispatch",
+      title: "Route Optimization — Traakar Dispatch",
       description:
-        "Tracckar plans routes that minimize deadhead miles, maximize loaded miles, and keep your HOS in check. Every mile should earn.",
+        "Traakar plans routes that minimize deadhead miles, maximize loaded miles, and keep your HOS in check. Every mile should earn.",
     },
     longDescription:
-      "An unloaded mile is a mile you paid for — fuel, wear, time — with nothing coming back. Most drivers accept high deadhead as unavoidable. It isn't. Smart lane chaining, backhaul planning, and fuel corridor awareness can dramatically cut your cost-per-mile. Tracckar builds your route around your earnings, not just your destination.",
+      "An unloaded mile is a mile you paid for — fuel, wear, time — with nothing coming back. Most drivers accept high deadhead as unavoidable. It isn't. Smart lane chaining, backhaul planning, and fuel corridor awareness can dramatically cut your cost-per-mile. Traakar builds your route around your earnings, not just your destination.",
     features: [
       {
         title: "Deadhead Minimization",
@@ -243,12 +243,12 @@ export const services: Service[] = [
     category: "ADMIN",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Paperwork & Back Office Support — Tracckar Dispatch",
+      title: "Paperwork & Back Office Support — Traakar Dispatch",
       description:
-        "Tracckar handles BOL, POD, invoicing, and broker documentation so you spend zero time on admin. Get paid faster, stay moving.",
+        "Traakar handles BOL, POD, invoicing, and broker documentation so you spend zero time on admin. Get paid faster, stay moving.",
     },
     longDescription:
-      "The paperwork never stops. Bills of lading, proof of delivery, rate confirmations, TONU claims, detention requests, invoicing — it's a second job. Most owner-operators lose hours every week on admin that doesn't pay. Tracckar handles the back-office so you can do what actually earns: drive.",
+      "The paperwork never stops. Bills of lading, proof of delivery, rate confirmations, TONU claims, detention requests, invoicing — it's a second job. Most owner-operators lose hours every week on admin that doesn't pay. Traakar handles the back-office so you can do what actually earns: drive.",
     features: [
       {
         title: "BOL & POD Management",
@@ -314,12 +314,12 @@ export const services: Service[] = [
     category: "SUPPORT",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Dedicated Dispatcher — Tracckar Dispatch",
+      title: "Dedicated Dispatcher — Traakar Dispatch",
       description:
         "One dispatcher, dedicated to your truck. They know your lanes, preferences, and goals — and they're available 24/7.",
     },
     longDescription:
-      "A dispatcher who doesn't know you is just a phone rep reading from a screen. At Tracckar, you get one dedicated dispatcher who learns your operation: your preferred lanes, your rate expectations, your home time requirements, your equipment quirks. Over time, they become an extension of your business — not just a service you subscribed to.",
+      "A dispatcher who doesn't know you is just a phone rep reading from a screen. At Traakar, you get one dedicated dispatcher who learns your operation: your preferred lanes, your rate expectations, your home time requirements, your equipment quirks. Over time, they become an extension of your business — not just a service you subscribed to.",
     features: [
       {
         title: "Single Point of Contact",
@@ -385,12 +385,12 @@ export const services: Service[] = [
     category: "VETTING",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Broker Credit & Vetting — Tracckar Dispatch",
+      title: "Broker Credit & Vetting — Traakar Dispatch",
       description:
-        "Tracckar checks broker credit scores, payment history, and MC authority before booking any load. Your truck only moves for brokers who pay.",
+        "Traakar checks broker credit scores, payment history, and MC authority before booking any load. Your truck only moves for brokers who pay.",
     },
     longDescription:
-      "Non-payment is one of the biggest risks owner-operators face — and most dispatchers don't protect you from it. Tracckar runs credit and payment history checks on every broker before your truck ever moves. We cross-reference DAT credit scores, Carrier411 ratings, and our own internal history to ensure you're only dealing with brokers who pay on time, every time.",
+      "Non-payment is one of the biggest risks owner-operators face — and most dispatchers don't protect you from it. Traakar runs credit and payment history checks on every broker before your truck ever moves. We cross-reference DAT credit scores, Carrier411 ratings, and our own internal history to ensure you're only dealing with brokers who pay on time, every time.",
     features: [
       {
         title: "DAT Credit Score Checks",
@@ -456,12 +456,12 @@ export const services: Service[] = [
     category: "COMPLIANCE",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "ELD & Compliance Support — Tracckar Dispatch",
+      title: "ELD & Compliance Support — Traakar Dispatch",
       description:
-        "Tracckar helps owner-operators stay FMCSA compliant — HOS monitoring, ELD guidance, IFTA tracking, and audit preparation so your authority stays clean.",
+        "Traakar helps owner-operators stay FMCSA compliant — HOS monitoring, ELD guidance, IFTA tracking, and audit preparation so your authority stays clean.",
     },
     longDescription:
-      "FMCSA compliance is a moving target — HOS rules, ELD mandates, IFTA filings, MCS-150 updates, driver qualification files. Most owner-operators stay reactive, fixing problems after they've already triggered a violation or audit notice. Tracckar helps you stay ahead of every requirement so compliance never becomes a reason your truck is sidelined.",
+      "FMCSA compliance is a moving target — HOS rules, ELD mandates, IFTA filings, MCS-150 updates, driver qualification files. Most owner-operators stay reactive, fixing problems after they've already triggered a violation or audit notice. Traakar helps you stay ahead of every requirement so compliance never becomes a reason your truck is sidelined.",
     features: [
       {
         title: "HOS Monitoring",

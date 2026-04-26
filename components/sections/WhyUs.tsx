@@ -64,11 +64,11 @@ export default function WhyUs() {
               Why Drivers Stay
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-text leading-tight mb-6 font-display">
-              Tracckar Isn't Just Dispatch —{" "}
+              Traakar Isn't Just Dispatch —{" "}
               <span className="text-shimmer">It's Your Growth Partner.</span>
             </h2>
             <p className="text-muted text-lg leading-relaxed mb-8">
-              Most of our clients come from bad dispatch experiences — poor communication, low-paying loads, and no real planning. They switch to Tracckar for structure, consistency, and results.
+              Most of our clients come from bad dispatch experiences — poor communication, low-paying loads, and no real planning. They switch to Traakar for structure, consistency, and results.
             </p>
 
             {/* Pricing callout */}

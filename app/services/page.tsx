@@ -8,9 +8,9 @@ import HowItWorks from "@/components/sections/HowItWorks"
 import WhyUs from "@/components/sections/WhyUs"
 
 export const metadata: Metadata = {
-  title: "Dispatch Services — Tracckar",
+  title: "Dispatch Services — Traakar",
   description:
-    "Explore all Tracckar dispatch services: load sourcing, rate negotiation, route optimization, paperwork support, and dedicated dispatchers for owner-operators.",
+    "Explore all Traakar dispatch services: load sourcing, rate negotiation, route optimization, paperwork support, and dedicated dispatchers for owner-operators.",
 }
 
 const serviceList = [
@@ -58,7 +58,7 @@ export default function ServicesPage() {
         eyebrow="What We Do"
         title="Every Service You Need to"
         titleHighlight="Run Profitably."
-        subtitle="From finding loads to handling paperwork, Tracckar covers the full dispatch operation so you can focus on driving."
+        subtitle="From finding loads to handling paperwork, Traakar covers the full dispatch operation so you can focus on driving."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
 
@@ -82,7 +82,7 @@ export default function ServicesPage() {
                 <span className="gradient-text">One Complete Operation.</span>
               </h2>
               <p className="text-lg leading-relaxed mb-8" style={{ color: "var(--text-muted)" }}>
-                Most dispatchers do one thing — find loads. Tracckar handles the entire operation: sourcing, negotiating, routing, paperwork, and a dedicated point of contact available around the clock.
+                Most dispatchers do one thing — find loads. Traakar handles the entire operation: sourcing, negotiating, routing, paperwork, and a dedicated point of contact available around the clock.
               </p>
               <p className="text-base leading-relaxed mb-10" style={{ color: "var(--text-muted)" }}>
                 You don't pay extra for more services. Everything here is included in the same 5–10% commission per load we book for you.
@@ -220,7 +220,7 @@ function ServicesCTA() {
           <span className="gradient-text-on-dark">No Upfront Cost.</span>
         </h2>
         <p className="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style={{ color: "var(--text-muted-on-dark)" }}>
-          You get the full Tracckar dispatch operation — every service listed here — for a simple 5–10% commission on loads we book for you.
+          You get the full Traakar dispatch operation — every service listed here — for a simple 5–10% commission on loads we book for you.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link

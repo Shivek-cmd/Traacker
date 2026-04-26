@@ -5,9 +5,9 @@ import PricingCards from "@/components/sections/PricingCards"
 import PricingFAQ from "@/components/sections/PricingFAQ"
 
 export const metadata: Metadata = {
-  title: "Pricing — Tracckar Dispatch",
+  title: "Pricing — Traakar Dispatch",
   description:
-    "Tracckar charges 5–10% commission on loads we book for you. No upfront fees, no monthly retainers, no hidden costs. You pay when you earn.",
+    "Traakar charges 5–10% commission on loads we book for you. No upfront fees, no monthly retainers, no hidden costs. You pay when you earn.",
 }
 
 export default function PricingPage() {
@@ -17,7 +17,7 @@ export default function PricingPage() {
         eyebrow="Transparent Pricing"
         title="You Pay When"
         titleHighlight="You Earn."
-        subtitle="No setup fees, no monthly retainers, no surprise charges. Tracckar earns a commission only on the loads we book for you — so our success depends entirely on yours."
+        subtitle="No setup fees, no monthly retainers, no surprise charges. Traakar earns a commission only on the loads we book for you — so our success depends entirely on yours."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Pricing" }]}
       />
       <PricingCards />

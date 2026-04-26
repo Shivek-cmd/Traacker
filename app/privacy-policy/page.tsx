@@ -2,8 +2,8 @@ import type { Metadata } from "next"
 import PageHero from "@/components/layout/PageHero"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Tracckar Dispatch",
-  description: "Learn how Tracckar collects, uses, and protects your personal information.",
+  title: "Privacy Policy — Traakar Dispatch",
+  description: "Learn how Traakar collects, uses, and protects your personal information.",
 }
 
 export default function PrivacyPolicyPage() {
@@ -19,7 +19,7 @@ export default function PrivacyPolicyPage() {
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <Prose>
             <h2>1. Information We Collect</h2>
-            <p>When you use Tracckar's dispatch services or contact us through our website, we may collect the following information:</p>
+            <p>When you use Traakar's dispatch services or contact us through our website, we may collect the following information:</p>
             <ul>
               <li><strong>Identity & Contact:</strong> Full name, email address, phone number.</li>
               <li><strong>Business Information:</strong> Motor Carrier (MC) number, DOT number, equipment type, operating lanes, and company name.</li>
@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
             <p>You can disable cookies in your browser settings. Some features may not function correctly without essential cookies.</p>
 
             <h2>5. Data Retention</h2>
-            <p>We retain your information for as long as necessary to provide our services and comply with legal obligations. If you terminate your dispatch relationship with Tracckar, we retain records as required by FMCSA regulations (typically 3 years) and delete personal data not required for compliance within 90 days of your request.</p>
+            <p>We retain your information for as long as necessary to provide our services and comply with legal obligations. If you terminate your dispatch relationship with Traakar, we retain records as required by FMCSA regulations (typically 3 years) and delete personal data not required for compliance within 90 days of your request.</p>
 
             <h2>6. Your Rights</h2>
             <p>You have the right to:</p>
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
               <li>Opt out of any marketing communications at any time</li>
               <li>Lodge a complaint with a data protection authority</li>
             </ul>
-            <p>To exercise any of these rights, contact us at <a href="mailto:privacy@Tracckar.com">privacy@Tracckar.com</a>.</p>
+            <p>To exercise any of these rights, contact us at <a href="mailto:privacy@Traakar.com">privacy@Traakar.com</a>.</p>
 
             <h2>7. Data Security</h2>
             <p>We implement industry-standard security measures including encrypted connections (HTTPS), access controls, and regular security reviews. No method of transmission over the internet is 100% secure. We will notify you of any breach affecting your personal information as required by applicable law.</p>
@@ -83,8 +83,8 @@ export default function PrivacyPolicyPage() {
             <h2>10. Contact Us</h2>
             <p>For any questions about this Privacy Policy or your personal data:</p>
             <ul>
-              <li>Email: <a href="mailto:privacy@Tracckar.com">privacy@Tracckar.com</a></li>
-              <li>General: <a href="mailto:dispatch@Tracckar.com">dispatch@Tracckar.com</a></li>
+              <li>Email: <a href="mailto:privacy@Traakar.com">privacy@Traakar.com</a></li>
+              <li>General: <a href="mailto:dispatch@Traakar.com">dispatch@Traakar.com</a></li>
             </ul>
           </Prose>
         </div>

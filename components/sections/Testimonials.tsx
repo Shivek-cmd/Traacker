@@ -12,7 +12,7 @@ const leftTestimonials = [
     equipment: "Dry Van · Texas",
     stars: 5,
     quote:
-      "I was doing everything myself — chasing loads, dealing with brokers, handling paperwork at night. Tracckar took all of that off my plate. My earnings went up because I'm just driving now.",
+      "I was doing everything myself — chasing loads, dealing with brokers, handling paperwork at night. Traakar took all of that off my plate. My earnings went up because I'm just driving now.",
   },
   {
     name: "Darnell R.",
@@ -36,7 +36,7 @@ const leftTestimonials = [
     equipment: "Reefer · Alabama",
     stars: 5,
     quote:
-      "They found me a consistent produce lane out of Florida that I've been running for four months. Before Tracckar I had no idea lanes like that were available to a single truck.",
+      "They found me a consistent produce lane out of Florida that I've been running for four months. Before Traakar I had no idea lanes like that were available to a single truck.",
   },
 ]
 
@@ -47,7 +47,7 @@ const rightTestimonials = [
     equipment: "Reefer · Ohio",
     stars: 5,
     quote:
-      "What I appreciate most is the communication. I always know what's happening. My last dispatcher would go silent for hours. Tracckar feels like a real business partner.",
+      "What I appreciate most is the communication. I always know what's happening. My last dispatcher would go silent for hours. Traakar feels like a real business partner.",
   },
   {
     name: "Carlos V.",
@@ -71,7 +71,7 @@ const rightTestimonials = [
     equipment: "Dry Van · Illinois",
     stars: 5,
     quote:
-      "I've used three dispatch services. Tracckar is the first one that actually feels like they work for me instead of just collecting a check. The difference is night and day.",
+      "I've used three dispatch services. Traakar is the first one that actually feels like they work for me instead of just collecting a check. The difference is night and day.",
   },
 ]
 
@@ -81,7 +81,7 @@ const featured = {
   equipment: "8 Trucks · North Carolina",
   stars: 5,
   quote:
-    "I scaled from 3 trucks to 8 in under a year. Tracckar handled dispatch for every single one. The lane strategy they put together cut my average deadhead from 22% down to 9%. That's not marketing — that's my actual numbers.",
+    "I scaled from 3 trucks to 8 in under a year. Traakar handled dispatch for every single one. The lane strategy they put together cut my average deadhead from 22% down to 9%. That's not marketing — that's my actual numbers.",
 }
 
 /* ─── Sub-components ──────────────────────────────────────────── */

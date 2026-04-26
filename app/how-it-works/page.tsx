@@ -8,9 +8,9 @@ import FAQ from "@/components/sections/FAQ"
 import type { FAQItem } from "@/components/sections/FAQ"
 
 export const metadata: Metadata = {
-  title: "How It Works — Tracckar Dispatch",
+  title: "How It Works — Traakar Dispatch",
   description:
-    "Getting started with Tracckar takes minutes. Share your truck details, and your dedicated dispatcher starts sourcing profitable loads the same day.",
+    "Getting started with Traakar takes minutes. Share your truck details, and your dedicated dispatcher starts sourcing profitable loads the same day.",
 }
 
 const faqs: FAQItem[] = [
@@ -24,7 +24,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "What if I already have some direct broker relationships?",
-    a: "We work alongside your existing setup. Tracckar focuses on filling in gaps, improving your average rate, and making sure your truck is never sitting idle unnecessarily.",
+    a: "We work alongside your existing setup. Traakar focuses on filling in gaps, improving your average rate, and making sure your truck is never sitting idle unnecessarily.",
   },
   {
     q: "How does payment work?",
@@ -35,8 +35,8 @@ const faqs: FAQItem[] = [
     a: "Your dispatcher handles it. Shipper delays, broker disputes, detention claims, document issues — we manage all broker communication so you can focus on driving.",
   },
   {
-    q: "Can I run multiple trucks through Tracckar?",
-    a: "Yes. Whether you're an owner-operator with one truck or a small fleet, Tracckar scales with your operation. Contact us and we'll discuss the right setup.",
+    q: "Can I run multiple trucks through Traakar?",
+    a: "Yes. Whether you're an owner-operator with one truck or a small fleet, Traakar scales with your operation. Contact us and we'll discuss the right setup.",
   },
 ]
 
@@ -70,8 +70,8 @@ export default function HowItWorksPage() {
               The Difference
             </p>
             <h2 className="text-4xl font-extrabold font-display leading-tight" style={{ color: "var(--text)" }}>
-              Before Tracckar.{" "}
-              <span className="gradient-text">After Tracckar.</span>
+              Before Traakar.{" "}
+              <span className="gradient-text">After Traakar.</span>
             </h2>
           </div>
 
@@ -79,10 +79,10 @@ export default function HowItWorksPage() {
             {/* Header */}
             <div className="grid grid-cols-2 gap-4 pb-3" style={{ borderBottom: "1px solid var(--border)" }}>
               <p className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: "var(--text-subtle)" }}>
-                Without Tracckar
+                Without Traakar
               </p>
               <p className="text-xs font-bold uppercase tracking-wider text-center" style={{ color: "var(--primary)" }}>
-                With Tracckar
+                With Traakar
               </p>
             </div>
             {beforeAfter.map((row, i) => (

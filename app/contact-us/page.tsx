@@ -6,9 +6,9 @@ import FAQ from "@/components/sections/FAQ"
 import type { FAQItem } from "@/components/sections/FAQ"
 
 export const metadata: Metadata = {
-  title: "Contact Us — Tracckar Dispatch",
+  title: "Contact Us — Traakar Dispatch",
   description:
-    "Get started with Tracckar today. No upfront fees — tell us about your truck and we'll be in touch within one business hour.",
+    "Get started with Traakar today. No upfront fees — tell us about your truck and we'll be in touch within one business hour.",
 }
 
 const whatToExpect = [
@@ -25,7 +25,7 @@ const faqs: FAQItem[] = [
   },
   {
     q: "Is there any upfront cost to join?",
-    a: "None. Tracckar charges 5–10% commission only on the loads we successfully book for you. No signup fees, no monthly retainers.",
+    a: "None. Traakar charges 5–10% commission only on the loads we successfully book for you. No signup fees, no monthly retainers.",
   },
   {
     q: "What equipment types do you work with?",
@@ -44,7 +44,7 @@ export default function ContactPage() {
         eyebrow="Get Started"
         title="Let's Build Your"
         titleHighlight="Dispatch Operation."
-        subtitle="Tell us about your truck. A Tracckar dispatcher will reach out within 1 business hour — no commitment, no upfront cost."
+        subtitle="Tell us about your truck. A Traakar dispatcher will reach out within 1 business hour — no commitment, no upfront cost."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact Us" }]}
       />
 
@@ -162,7 +162,7 @@ export default function ContactPage() {
               >
                 <p className="text-sm leading-relaxed" style={{ color: "var(--text-muted)" }}>
                   <span className="font-semibold" style={{ color: "var(--text)" }}>No commitment required.</span>{" "}
-                  Reaching out is free. We'll explain how Tracckar works and answer every question before you decide anything.
+                  Reaching out is free. We'll explain how Traakar works and answer every question before you decide anything.
                 </p>
               </div>
             </div>

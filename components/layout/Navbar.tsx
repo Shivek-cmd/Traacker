@@ -70,7 +70,7 @@ export default function Navbar() {
               <span className="text-white font-bold text-sm font-display">T</span>
             </div>
             <span className="font-bold text-xl tracking-tight font-display" style={{ color: "var(--nav-text)" }}>
-              Tra<span style={{ color: "var(--primary)" }}>acker</span>
+              Traa<span style={{ color: "var(--primary)" }}>kar</span>
             </span>
           </Link>
 

@@ -18,9 +18,9 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "Tracckar — Keep Your Trucks Moving. Keep Your Revenue Growing.",
+  title: "Traakar — Keep Your Trucks Moving. Keep Your Revenue Growing.",
   description:
-    "Tracckar helps owner-operators and fleets secure high-paying loads, reduce downtime, and simplify dispatch operations across the U.S.",
+    "Traakar helps owner-operators and fleets secure high-paying loads, reduce downtime, and simplify dispatch operations across the U.S.",
   keywords:
     "truck dispatch, owner operator dispatch, freight dispatch, load board, trucking dispatch service",
 }

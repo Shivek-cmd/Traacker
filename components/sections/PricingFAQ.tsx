@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Are there any upfront costs or setup fees?",
-    a: "None. Onboarding is completely free. We get to work the same day you sign the agreement. Your first payment to Tracckar happens only after your first completed load.",
+    a: "None. Onboarding is completely free. We get to work the same day you sign the agreement. Your first payment to Traakar happens only after your first completed load.",
   },
   {
     q: "What equipment types do you dispatch?",

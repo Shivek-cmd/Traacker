@@ -41,7 +41,7 @@ export default function ContactForm() {
           We'll be in touch shortly.
         </h3>
         <p className="text-base leading-relaxed max-w-sm" style={{ color: "var(--text-muted)" }}>
-          Thanks for reaching out. A Tracckar dispatcher will contact you within 1 business hour to get you set up.
+          Thanks for reaching out. A Traakar dispatcher will contact you within 1 business hour to get you set up.
         </p>
       </div>
     )

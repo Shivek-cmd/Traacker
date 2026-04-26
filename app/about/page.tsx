@@ -6,19 +6,19 @@ import Stats from "@/components/sections/Stats"
 import AboutValuesSection from "@/components/sections/AboutValuesSection"
 
 export const metadata: Metadata = {
-  title: "About Tracckar — Dispatch Built for Drivers",
+  title: "About Traakar — Dispatch Built for Drivers",
   description:
-    "Tracckar was built by dispatchers who understood what owner-operators were missing: real communication, consistent freight, and a dispatcher who actually cares.",
+    "Traakar was built by dispatchers who understood what owner-operators were missing: real communication, consistent freight, and a dispatcher who actually cares.",
 }
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="About Tracckar"
+        eyebrow="About Traakar"
         title="Built for Drivers."
         titleHighlight="Run by Dispatchers."
-        subtitle="We started Tracckar because we saw what bad dispatch was costing owner-operators — not just money, but time, stress, and lost opportunity."
+        subtitle="We started Traakar because we saw what bad dispatch was costing owner-operators — not just money, but time, stress, and lost opportunity."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About" }]}
       />
 
@@ -53,13 +53,13 @@ export default function AboutPage() {
               </h2>
               <div className="flex flex-col gap-5 text-base leading-relaxed" style={{ color: "var(--text-muted)" }}>
                 <p>
-                  Tracckar was founded by Shaan Soni after witnessing firsthand what bad dispatch was costing owner-operators — hardworking drivers with solid equipment and the right attitude — struggling not because of anything on their end, but because their dispatch setup was failing them.
+                  Traakar was founded by Shaan Soni after witnessing firsthand what bad dispatch was costing owner-operators — hardworking drivers with solid equipment and the right attitude — struggling not because of anything on their end, but because their dispatch setup was failing them.
                 </p>
                 <p>
                   Low rates accepted without pushback. Days sitting idle between loads. Calls that went unanswered. Paperwork bottlenecks that delayed payment. And dispatcher after dispatcher who treated the job as a numbers game instead of a partnership.
                 </p>
                 <p>
-                  Shaan built Tracckar to fix exactly that. One dedicated dispatcher per driver. Real negotiation on every load. 24/7 availability. And a genuine commitment to your long-term earnings — because our commission depends on it.
+                  Shaan built Traakar to fix exactly that. One dedicated dispatcher per driver. Real negotiation on every load. 24/7 availability. And a genuine commitment to your long-term earnings — because our commission depends on it.
                 </p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export default function AboutPage() {
               >
                 <img
                   src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&h=1000&q=80&fit=crop"
-                  alt="Shaan Soni — Founder & CEO, Tracckar"
+                  alt="Shaan Soni — Founder & CEO, Traakar"
                   className="w-full h-full object-cover"
                 />
                 <div
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 <div className="absolute bottom-0 left-0 right-0 p-7">
                   <p className="font-bold text-xl font-display text-white">Shaan Soni</p>
                   <p className="text-sm mt-1" style={{ color: "rgba(255,255,255,0.65)" }}>
-                    Founder & CEO, Tracckar
+                    Founder & CEO, Traakar
                   </p>
                 </div>
               </div>

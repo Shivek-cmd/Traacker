@@ -35,7 +35,7 @@ export default function StickyScrollProcess({
   eyebrow = "The Process",
   title = "Simple Process.",
   titleHighlight = "Real Results.",
-  subtitle = "You don't need to figure everything out. Once you join Tracckar, we take it from here.",
+  subtitle = "You don't need to figure everything out. Once you join Traakar, we take it from here.",
   steps,
   ctaPrimary = { label: "Start the Process", href: "/contact-us" },
   ctaSecondary,

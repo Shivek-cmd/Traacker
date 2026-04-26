@@ -29,7 +29,7 @@ export default function Footer() {
                 <span className="text-white font-bold text-sm font-display">T</span>
               </div>
               <span className="font-bold text-xl tracking-tight text-text font-display">
-                Tra<span style={{ color: "var(--primary)" }}>acker</span>
+                Traa<span style={{ color: "var(--primary)" }}>kar</span>
               </span>
             </div>
             <p className="text-muted text-sm leading-relaxed max-w-xs">
@@ -113,7 +113,7 @@ export default function Footer() {
           style={{ borderTop: "1px solid var(--border)" }}
         >
           <p className="text-xs" style={{ color: "var(--text-subtle)" }}>
-            © {new Date().getFullYear()} Tracckar. All rights reserved.
+            © {new Date().getFullYear()} Traakar. All rights reserved.
           </p>
           <div className="flex items-center gap-5">
             <Link
