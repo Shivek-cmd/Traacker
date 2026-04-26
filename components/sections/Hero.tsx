@@ -194,7 +194,7 @@ export default function Hero() {
             className="flex flex-col sm:flex-row items-start gap-4 mb-14"
           >
             <a
-              href="#contact"
+              href="/contact-us"
               className="group btn-primary inline-flex items-center gap-3 font-display font-bold text-sm tracking-wide rounded-xl"
              style={{ color: "var(--text-on-dark)", padding: "14px 28px" }}
             >

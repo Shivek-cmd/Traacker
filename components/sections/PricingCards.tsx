@@ -182,7 +182,7 @@ export default function PricingCards() {
 
               {/* CTA */}
               <Link
-                href="/#contact"
+                href="/contact-us"
                 className={`group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-sm font-display transition-all duration-200 ${
                   plan.highlight
                     ? "btn-primary text-white"

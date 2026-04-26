@@ -21,17 +21,17 @@ export const services: Service[] = [
     slug: "load-sourcing",
     title: "Load Sourcing & Booking",
     tagline: "Your truck should never sit idle.",
-    body: "We find high-quality freight across DAT, Truckstop.com, and direct broker relationships — keeping your truck consistently loaded with profitable runs.",
+    body: "We find top-paying freight across DAT, Truckstop.com, and our trusted broker network — keeping your truck consistently loaded with the most profitable runs available.",
     highlight: "Consistent load availability",
     category: "DISPATCH",
     image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Load Sourcing & Booking — Traacker Dispatch",
+      title: "Load Sourcing & Booking — Tracckar Dispatch",
       description:
-        "Traacker sources high-paying freight from DAT, Truckstop.com, and direct broker relationships. Your truck stays loaded — every week.",
+        "Tracckar sources high-paying freight from DAT, Truckstop.com, and direct broker relationships. Your truck stays loaded — every week.",
     },
     longDescription:
-      "Finding quality freight is a full-time job. Between monitoring load boards, chasing brokers, and sifting through low-rate offers, drivers lose hours every week — and those hours aren't paid. Traacker's dispatchers work load boards 24/7 so you don't have to. We focus on loads that fit your lanes, equipment, and rate expectations.",
+      "Finding quality freight is a full-time job. Between monitoring load boards, chasing brokers, and sifting through low-rate offers, drivers lose hours every week — and those hours aren't paid. Tracckar's dispatchers work load boards 24/7 so you don't have to. We focus on loads that fit your lanes, equipment, and rate expectations.",
     features: [
       {
         title: "Multi-Board Coverage",
@@ -43,7 +43,11 @@ export const services: Service[] = [
       },
       {
         title: "Pre-Screened Loads Only",
-        description: "Every load is checked for rate, broker reliability, accessorials, and delivery window before we ever bring it to you.",
+        description: "Every load is checked for rate, broker credit score, payment track record, accessorials, and delivery window. We only book with brokers who have a verified history of paying on time.",
+      },
+      {
+        title: "Trusted Broker Network",
+        description: "Years of active dispatching have built us a curated network of high-paying brokers with strong credit ratings. You get priority access to freight that never hits the open load board.",
       },
       {
         title: "Backhaul Planning",
@@ -51,7 +55,7 @@ export const services: Service[] = [
       },
       {
         title: "Spot + Contract Mix",
-        description: "We balance spot market opportunities with recurring contract lanes to stabilize your weekly income.",
+        description: "We balance spot market opportunities with recurring contract lanes to stabilize your weekly income and protect against rate volatility.",
       },
       {
         title: "24/7 Availability",
@@ -97,12 +101,12 @@ export const services: Service[] = [
     category: "RATES",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Rate Negotiation — Traacker Dispatch",
+      title: "Rate Negotiation — Tracckar Dispatch",
       description:
-        "Traacker negotiates every load rate directly with brokers. We push back on lowball offers and secure the best per-mile rate for your truck.",
+        "Tracckar negotiates every load rate directly with brokers. We push back on lowball offers and secure the best per-mile rate for your truck.",
     },
     longDescription:
-      "The rate you accept on day one sets the standard brokers use for every load after. Most drivers — understandably — accept the first number to get moving. Traacker dispatchers negotiate from a position of knowledge: current market rates, lane averages, and load-to-truck ratios. We push back so you don't have to.",
+      "The rate you accept on day one sets the standard brokers use for every load after. Most drivers — understandably — accept the first number to get moving. Tracckar dispatchers negotiate from a position of knowledge: current market rates, lane averages, and load-to-truck ratios. We push back so you don't have to.",
     features: [
       {
         title: "Real-Time Market Intelligence",
@@ -168,12 +172,12 @@ export const services: Service[] = [
     category: "ROUTING",
     image: "https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Route Optimization — Traacker Dispatch",
+      title: "Route Optimization — Tracckar Dispatch",
       description:
-        "Traacker plans routes that minimize deadhead miles, maximize loaded miles, and keep your HOS in check. Every mile should earn.",
+        "Tracckar plans routes that minimize deadhead miles, maximize loaded miles, and keep your HOS in check. Every mile should earn.",
     },
     longDescription:
-      "An unloaded mile is a mile you paid for — fuel, wear, time — with nothing coming back. Most drivers accept high deadhead as unavoidable. It isn't. Smart lane chaining, backhaul planning, and fuel corridor awareness can dramatically cut your cost-per-mile. Traacker builds your route around your earnings, not just your destination.",
+      "An unloaded mile is a mile you paid for — fuel, wear, time — with nothing coming back. Most drivers accept high deadhead as unavoidable. It isn't. Smart lane chaining, backhaul planning, and fuel corridor awareness can dramatically cut your cost-per-mile. Tracckar builds your route around your earnings, not just your destination.",
     features: [
       {
         title: "Deadhead Minimization",
@@ -184,8 +188,8 @@ export const services: Service[] = [
         description: "We factor in major truck stop corridors and fuel price zones when building your route to cut your fuel spend per trip.",
       },
       {
-        title: "HOS-Aware Scheduling",
-        description: "Every route is planned with Hours of Service in mind. No forced violations, no rushed deliveries that put you at risk.",
+        title: "HOS & ELD Compliance",
+        description: "Every route is planned around your Hours of Service and ELD logs. No forced violations, no rushed deliveries that put your operating authority at risk.",
       },
       {
         title: "Weather & Traffic Routing",
@@ -239,12 +243,12 @@ export const services: Service[] = [
     category: "ADMIN",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Paperwork & Back Office Support — Traacker Dispatch",
+      title: "Paperwork & Back Office Support — Tracckar Dispatch",
       description:
-        "Traacker handles BOL, POD, invoicing, and broker documentation so you spend zero time on admin. Get paid faster, stay moving.",
+        "Tracckar handles BOL, POD, invoicing, and broker documentation so you spend zero time on admin. Get paid faster, stay moving.",
     },
     longDescription:
-      "The paperwork never stops. Bills of lading, proof of delivery, rate confirmations, TONU claims, detention requests, invoicing — it's a second job. Most owner-operators lose hours every week on admin that doesn't pay. Traacker handles the back-office so you can do what actually earns: drive.",
+      "The paperwork never stops. Bills of lading, proof of delivery, rate confirmations, TONU claims, detention requests, invoicing — it's a second job. Most owner-operators lose hours every week on admin that doesn't pay. Tracckar handles the back-office so you can do what actually earns: drive.",
     features: [
       {
         title: "BOL & POD Management",
@@ -310,12 +314,12 @@ export const services: Service[] = [
     category: "SUPPORT",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=840&q=80&fit=crop",
     meta: {
-      title: "Dedicated Dispatcher — Traacker Dispatch",
+      title: "Dedicated Dispatcher — Tracckar Dispatch",
       description:
         "One dispatcher, dedicated to your truck. They know your lanes, preferences, and goals — and they're available 24/7.",
     },
     longDescription:
-      "A dispatcher who doesn't know you is just a phone rep reading from a screen. At Traacker, you get one dedicated dispatcher who learns your operation: your preferred lanes, your rate expectations, your home time requirements, your equipment quirks. Over time, they become an extension of your business — not just a service you subscribed to.",
+      "A dispatcher who doesn't know you is just a phone rep reading from a screen. At Tracckar, you get one dedicated dispatcher who learns your operation: your preferred lanes, your rate expectations, your home time requirements, your equipment quirks. Over time, they become an extension of your business — not just a service you subscribed to.",
     features: [
       {
         title: "Single Point of Contact",
@@ -326,8 +330,8 @@ export const services: Service[] = [
         description: "Loads don't follow a 9-to-5 schedule. Your dispatcher is available around the clock for urgent issues and last-minute freight.",
       },
       {
-        title: "Business Learning",
-        description: "Your dispatcher tracks your preferences, learns your lanes, and gets better at finding the right freight for you over time.",
+        title: "Strategic Load Planning",
+        description: "Your dispatcher builds a strategic plan around your lanes, earnings goals, and market conditions — thinking weeks ahead, not just the next load.",
       },
       {
         title: "Real-Time Load Updates",
@@ -338,8 +342,8 @@ export const services: Service[] = [
         description: "Your dispatcher flags issues before they become problems: shipper delays, weather, document gaps — handled proactively.",
       },
       {
-        title: "Weekly Check-Ins",
-        description: "Regular performance reviews: what ran well, what to adjust, what lanes to target next. A real working relationship.",
+        title: "Weekly Reviews & Insurance Support",
+        description: "Regular performance reviews: rates, lanes, and adjustments. We also connect you with A+ rated commercial insurance carriers so your coverage stays strong and competitively priced.",
       },
     ],
     process: [
@@ -370,6 +374,148 @@ export const services: Service[] = [
       "Faster response to urgent issues",
       "Consistent freight that matches your preferences",
       "A long-term working relationship that improves over time",
+    ],
+  },
+  {
+    slug: "broker-vetting",
+    title: "Broker Credit & Vetting",
+    tagline: "Never chase a payment again.",
+    body: "We run credit checks on every broker before booking a single load. Our vetted broker network means your freight only moves with carriers who have a verified track record of paying on time.",
+    highlight: "Zero non-payment risk",
+    category: "VETTING",
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=840&q=80&fit=crop",
+    meta: {
+      title: "Broker Credit & Vetting — Tracckar Dispatch",
+      description:
+        "Tracckar checks broker credit scores, payment history, and MC authority before booking any load. Your truck only moves for brokers who pay.",
+    },
+    longDescription:
+      "Non-payment is one of the biggest risks owner-operators face — and most dispatchers don't protect you from it. Tracckar runs credit and payment history checks on every broker before your truck ever moves. We cross-reference DAT credit scores, Carrier411 ratings, and our own internal history to ensure you're only dealing with brokers who pay on time, every time.",
+    features: [
+      {
+        title: "DAT Credit Score Checks",
+        description: "We verify every broker's DAT credit score before accepting any load. Brokers with poor credit ratings are rejected outright — no exceptions.",
+      },
+      {
+        title: "Carrier411 Verification",
+        description: "We cross-reference broker payment performance on Carrier411 to catch bad payers and flag brokers with dispute histories before they cost you.",
+      },
+      {
+        title: "MC Authority Verification",
+        description: "Every broker's MC authority and operating status is verified with FMCSA before booking to confirm they're licensed and in good standing.",
+      },
+      {
+        title: "Trusted Broker Network",
+        description: "Access to our curated network of brokers with A+ payment history and strong freight volume. These relationships mean better rates and reliable payment.",
+      },
+      {
+        title: "Non-Payment Follow-Up",
+        description: "If a broker disputes or delays payment, we handle all follow-up, documentation, and escalation on your behalf until the invoice is resolved.",
+      },
+      {
+        title: "Internal Broker Blacklist",
+        description: "We maintain an internal blacklist of brokers with non-payment or dispute histories. Your truck never moves for a broker on this list.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Load Identified",
+        body: "We find a load that matches your lanes and rate target. Before presenting it to you, we pull the broker's credit and payment profile.",
+      },
+      {
+        step: "02",
+        title: "Credit & Authority Check",
+        body: "We verify broker credit score on DAT, cross-check on Carrier411, and confirm their MC authority is active with FMCSA. Takes minutes, not days.",
+      },
+      {
+        step: "03",
+        title: "Load Presented to You",
+        body: "Only loads from verified, creditworthy brokers reach you. You see the broker name, credit rating, and our internal trust score alongside the load details.",
+      },
+      {
+        step: "04",
+        title: "Payment Tracking",
+        body: "After delivery, we track payment status and follow up with the broker if payment is delayed. You focus on the road — we chase the invoice.",
+      },
+    ],
+    outcomes: [
+      "No loads booked from brokers with poor payment history",
+      "Faster payment cycles from vetted, reliable brokers",
+      "Full broker credit visibility before every booking",
+      "Non-payment disputes handled without your involvement",
+      "Peace of mind that every load ends with a paycheck",
+    ],
+  },
+  {
+    slug: "eld-compliance",
+    title: "ELD & Compliance Support",
+    tagline: "Stay legal. Stay moving.",
+    body: "We help you navigate FMCSA regulations, manage HOS compliance, and prepare for audits — so a compliance issue never puts your truck out of service or your authority at risk.",
+    highlight: "Full FMCSA compliance",
+    category: "COMPLIANCE",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=840&q=80&fit=crop",
+    meta: {
+      title: "ELD & Compliance Support — Tracckar Dispatch",
+      description:
+        "Tracckar helps owner-operators stay FMCSA compliant — HOS monitoring, ELD guidance, IFTA tracking, and audit preparation so your authority stays clean.",
+    },
+    longDescription:
+      "FMCSA compliance is a moving target — HOS rules, ELD mandates, IFTA filings, MCS-150 updates, driver qualification files. Most owner-operators stay reactive, fixing problems after they've already triggered a violation or audit notice. Tracckar helps you stay ahead of every requirement so compliance never becomes a reason your truck is sidelined.",
+    features: [
+      {
+        title: "HOS Monitoring",
+        description: "We track your Hours of Service and flag potential violations before they happen. Routes are planned to keep you compliant without sacrificing loaded miles.",
+      },
+      {
+        title: "ELD Setup & Guidance",
+        description: "Guidance on selecting and correctly configuring an ELD device that meets FMCSA mandate requirements for your equipment type and operation.",
+      },
+      {
+        title: "IFTA Mileage Tracking",
+        description: "We help track state-by-state mileage for your IFTA quarterly fuel tax filings, reducing errors and minimizing your audit risk.",
+      },
+      {
+        title: "FMCSA Status Reviews",
+        description: "Periodic review of your operating authority, insurance filings, and MCS-150 biennial update to keep your DOT status active and your safety score clean.",
+      },
+      {
+        title: "DOT Audit Preparation",
+        description: "If you receive a DOT audit or roadside inspection notice, we help organize your logs, review your records, and prepare documentation before the review.",
+      },
+      {
+        title: "Driver Qualification Files",
+        description: "Guidance on maintaining proper DQ file documentation — medical certificates, MVR records, and annual reviews — to stay compliant with FMCSA requirements.",
+      },
+    ],
+    process: [
+      {
+        step: "01",
+        title: "Compliance Review",
+        body: "We review your current operating authority, ELD setup, insurance filings, and HOS habits to identify any gaps or risks before they become violations.",
+      },
+      {
+        step: "02",
+        title: "Setup & Configuration",
+        body: "We guide you through any ELD configuration, record-keeping setup, or FMCSA filings needed to bring your operation fully into compliance.",
+      },
+      {
+        step: "03",
+        title: "Ongoing Monitoring",
+        body: "Your dispatcher monitors HOS patterns across loads, flags upcoming IFTA filing deadlines, and keeps watch on your safety score and authority status.",
+      },
+      {
+        step: "04",
+        title: "Audit & Incident Support",
+        body: "If a compliance issue arises — roadside inspection, DOT audit, or violation notice — we help you respond quickly with organized documentation and clear communication.",
+      },
+    ],
+    outcomes: [
+      "Zero HOS violations on dispatcher-planned routes",
+      "ELD device correctly configured and FMCSA compliant",
+      "IFTA filings accurate and submitted on time",
+      "Clean DOT safety score and active operating authority",
+      "Confidence that compliance is never your problem to manage alone",
     ],
   },
 ]

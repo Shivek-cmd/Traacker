@@ -3,7 +3,7 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
-import { ArrowRight, CheckCircle2, Search, TrendingUp, Route, FileText, Headphones, LucideIcon } from "lucide-react"
+import { ArrowRight, CheckCircle2, Search, TrendingUp, Route, FileText, Headphones, ShieldCheck, ClipboardCheck, LucideIcon } from "lucide-react"
 import type { Service } from "@/lib/services"
 import StickyScrollProcess from "./StickyScrollProcess"
 import { TiltCard } from "./TiltCard"
@@ -14,6 +14,8 @@ const iconMap: Record<string, LucideIcon> = {
   "route-optimization": Route,
   "paperwork-support": FileText,
   "dedicated-dispatcher": Headphones,
+  "broker-vetting": ShieldCheck,
+  "eld-compliance": ClipboardCheck,
 }
 
 /* ⚠️ Never add ease property to variant transitions — FM12+ TypeScript error */
@@ -100,7 +102,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
         titleHighlight="Works."
         subtitle={`Here's exactly how we handle ${service.title.toLowerCase()} for your truck, step by step.`}
         steps={service.process}
-        ctaPrimary={{ label: "Get Started Today", href: "/#contact" }}
+        ctaPrimary={{ label: "Get Started Today", href: "/contact-us" }}
         ctaSecondary={{ label: "View All Services", href: "/services" }}
       />
 
@@ -166,7 +168,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/#contact"
+              href="/contact-us"
               className="group btn-primary inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-base rounded-xl font-display"
             >
               Get Started Today

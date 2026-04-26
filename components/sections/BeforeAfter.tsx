@@ -53,7 +53,7 @@ export default function BeforeAfter() {
             <span className="text-shimmer">Without Realizing It</span>
           </h2>
           <p className="mt-4 text-muted text-lg max-w-xl mx-auto">
-            Here's what life looks like before and after Traacker.
+            Here's what life looks like before and after Tracckar.
           </p>
         </motion.div>
 
@@ -81,7 +81,7 @@ export default function BeforeAfter() {
                 <X size={18} style={{ color: "var(--error)" }} />
               </div>
               <div>
-                <h3 className="text-text font-bold text-lg font-display">Without Traacker</h3>
+                <h3 className="text-text font-bold text-lg font-display">Without Tracckar</h3>
                 <p className="text-xs font-medium" style={{ color: "var(--error)" }}>
                   Stress. Empty miles. Low rates.
                 </p>
@@ -134,7 +134,7 @@ export default function BeforeAfter() {
                 <Check size={18} style={{ color: "var(--primary)" }} />
               </div>
               <div>
-                <h3 className="text-text font-bold text-lg font-display">With Traacker</h3>
+                <h3 className="text-text font-bold text-lg font-display">With Tracckar</h3>
                 <p className="text-xs font-medium" style={{ color: "var(--primary)" }}>
                   Consistent loads. Better pay. Smooth ops.
                 </p>
@@ -169,7 +169,7 @@ export default function BeforeAfter() {
           className="mt-12 text-center"
         >
           <p className="text-2xl sm:text-3xl font-bold text-text font-display">
-            Traacker fixes this.
+            Tracckar fixes this.
           </p>
         </motion.div>
       </div>

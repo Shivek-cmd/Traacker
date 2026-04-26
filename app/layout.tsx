@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Space_Grotesk, Manrope } from "next/font/google"
 import Navbar from "@/components/layout/Navbar"
 import Footer from "@/components/layout/Footer"
+import FloatingCallButton from "@/components/layout/FloatingCallButton"
 import "./globals.css"
 
 const spaceGrotesk = Space_Grotesk({
@@ -17,9 +18,9 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "Traacker — Keep Your Trucks Moving. Keep Your Revenue Growing.",
+  title: "Tracckar — Keep Your Trucks Moving. Keep Your Revenue Growing.",
   description:
-    "Traacker helps owner-operators and fleets secure high-paying loads, reduce downtime, and simplify dispatch operations across the U.S.",
+    "Tracckar helps owner-operators and fleets secure high-paying loads, reduce downtime, and simplify dispatch operations across the U.S.",
   keywords:
     "truck dispatch, owner operator dispatch, freight dispatch, load board, trucking dispatch service",
 }
@@ -43,6 +44,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <FloatingCallButton />
       </body>
     </html>
   )

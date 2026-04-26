@@ -81,14 +81,14 @@ export default function CTA() {
             className="text-lg max-w-xl mx-auto mb-10 leading-relaxed"
             style={{ color: "var(--text-muted-on-dark)" }}
           >
-            Stop wasting time chasing loads and negotiating alone. Let Traacker
+            Stop wasting time chasing loads and negotiating alone. Let Tracckar
             handle dispatch the way it should be done.
           </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:dispatch@traacker.com"
+              href="mailto:dispatch@Tracckar.com"
               className="group btn-primary inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-base rounded-xl font-display"
             >
               Start Dispatching Today
@@ -98,7 +98,7 @@ export default function CTA() {
               />
             </a>
             <a
-              href="tel:+1-800-TRAACKER"
+              href="tel:+1-800-Tracckar"
               className="btn-outline-on-dark inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded-xl backdrop-blur-sm font-display"
             >
               <Phone size={16} />

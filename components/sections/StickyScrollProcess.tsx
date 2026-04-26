@@ -35,9 +35,9 @@ export default function StickyScrollProcess({
   eyebrow = "The Process",
   title = "Simple Process.",
   titleHighlight = "Real Results.",
-  subtitle = "You don't need to figure everything out. Once you join Traacker, we take it from here.",
+  subtitle = "You don't need to figure everything out. Once you join Tracckar, we take it from here.",
   steps,
-  ctaPrimary = { label: "Start the Process", href: "#contact" },
+  ctaPrimary = { label: "Start the Process", href: "/contact-us" },
   ctaSecondary,
 }: Props) {
   const outerRef = useRef<HTMLDivElement>(null)
