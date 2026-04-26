@@ -234,9 +234,9 @@ export default function Hero() {
           >
             {/* Video container */}
             <motion.div
-              style={{ y: videoY }}
               className="relative overflow-hidden"
               style={{
+                y: videoY,
                 borderRadius: "20px",
                 border: "1px solid var(--border-hover)",
                 aspectRatio: "9/11",
