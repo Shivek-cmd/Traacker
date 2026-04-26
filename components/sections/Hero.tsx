@@ -292,7 +292,6 @@ export default function Hero() {
                         <AnimatedNumber
                           value={s.value}
                           suffix={s.suffix}
-                          prefix={s.prefix}
                         />
                       </p>
                       <p className="text-xs text-subtle">{s.label}</p>
