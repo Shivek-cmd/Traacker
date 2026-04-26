@@ -1,8 +1,12 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, type ReactNode } from "react";
 
-export const TiltCard = ({ children }) => {
-  const ref = useRef(null);
+type TiltCardProps = {
+  children: ReactNode;
+};
+
+export const TiltCard = ({ children }: TiltCardProps) => {
+  const ref = useRef<HTMLDivElement>(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -10,7 +14,9 @@ export const TiltCard = ({ children }) => {
   const rotateX = useTransform(y, [-100, 100], [10, -10]);
   const rotateY = useTransform(x, [-100, 100], [-10, 10]);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+
     const rect = ref.current.getBoundingClientRect();
 
     const width = rect.width;
