@@ -88,7 +88,7 @@ export default function ServiceCardScroll({
                 style={{ color: "var(--text)" }}
               >
                 {title}{" "}
-                <span className="gradient-text">{titleHighlight}</span>
+                <span className="text-shimmer">{titleHighlight}</span>
               </h2>
               {subtitle && (
                 <p className="mt-4 text-lg leading-relaxed" style={{ color: "var(--text-muted)" }}>

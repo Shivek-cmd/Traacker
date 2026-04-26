@@ -65,7 +65,7 @@ export default function WhyUs() {
             </p>
             <h2 className="text-4xl sm:text-5xl font-extrabold text-text leading-tight mb-6 font-display">
               Traacker Isn't Just Dispatch —{" "}
-              <span className="gradient-text">It's Your Growth Partner.</span>
+              <span className="text-shimmer">It's Your Growth Partner.</span>
             </h2>
             <p className="text-muted text-lg leading-relaxed mb-8">
               Most of our clients come from bad dispatch experiences — poor communication, low-paying loads, and no real planning. They switch to Traacker for structure, consistency, and results.

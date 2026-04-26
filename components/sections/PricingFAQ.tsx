@@ -117,7 +117,7 @@ export default function PricingFAQ() {
             Got Questions?
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-text font-display">
-            Frequently Asked <span className="gradient-text">Questions</span>
+            Frequently Asked <span className="text-shimmer">Questions</span>
           </h2>
         </motion.div>
 

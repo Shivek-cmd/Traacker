@@ -57,7 +57,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-text font-display">
                 Everything You Get With{" "}
-                <span className="gradient-text">{service.title}</span>
+                <span className="text-shimmer">{service.title}</span>
               </h2>
             </motion.div>
 
@@ -115,7 +115,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
                 </p>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-text font-display leading-tight">
                   Real Outcomes From{" "}
-                  <span className="gradient-text">This Service</span>
+                  <span className="text-shimmer">This Service</span>
                 </h2>
                 <p className="mt-4 text-muted leading-relaxed">
                   These aren't promises — they're what consistently happens when your dispatch is handled right.
@@ -158,7 +158,7 @@ export default function ServiceDetail({ service }: { service: Service }) {
           </p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight font-display mb-6" style={{ color: "var(--text-on-dark)" }}>
             Let's Put{" "}
-            <span className="gradient-text-on-dark">{service.title}</span>{" "}
+            <span className="text-shimmer">{service.title}</span>{" "}
             to Work for You
           </h2>
           <p className="text-lg mb-10 leading-relaxed" style={{ color: "var(--text-muted-on-dark)" }}>

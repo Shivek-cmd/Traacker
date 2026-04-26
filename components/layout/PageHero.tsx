@@ -83,7 +83,7 @@ export default function PageHero({ eyebrow, title, titleHighlight, subtitle, bre
           className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-text leading-tight font-display max-w-4xl"
         >
           {title}{" "}
-          {titleHighlight && <span className="gradient-text">{titleHighlight}</span>}
+          {titleHighlight && <span className="text-shimmer">{titleHighlight}</span>}
         </motion.h1>
 
         {/* Subtitle */}

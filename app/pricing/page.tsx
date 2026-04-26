@@ -43,7 +43,7 @@ function PricingCTA() {
         </p>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-text font-display mb-6">
           Start Dispatching Today.{" "}
-          <span className="gradient-text">Pay Nothing Upfront.</span>
+          <span className="text-shimmer">Pay Nothing Upfront.</span>
         </h2>
         <p className="text-muted text-lg mb-10">
           Onboarding takes minutes. Your dispatcher gets to work the same day.

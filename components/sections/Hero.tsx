@@ -60,7 +60,7 @@ export default function Hero() {
       {/* ── FULL-BLEED VIDEO BACKGROUND ── */}
       <motion.div
         style={{ y: videoY }}
-        className="absolute inset-0 z-0 pointer-events-none scale-110"
+        className="absolute inset-0 z-0 pointer-events-none scale-150"
       >
         <video
           autoPlay
@@ -154,7 +154,7 @@ export default function Hero() {
               style={{ fontSize: "clamp(3.2rem, 7vw, 6rem)" }}
             >
               Trucks{" "}
-              <span className="gradient-text">Moving.</span>
+              <span className="text-shimmer">Moving.</span>
             </motion.h1>
           </div>
 

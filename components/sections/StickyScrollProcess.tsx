@@ -93,7 +93,7 @@ export default function StickyScrollProcess({
                 {titleHighlight && (
                   <>
                     {" "}
-                    <span className="gradient-text">{titleHighlight}</span>
+                    <span className="text-shimmer">{titleHighlight}</span>
                   </>
                 )}
               </h2>
@@ -261,7 +261,7 @@ export default function StickyScrollProcess({
             style={{ color: "var(--text)" }}
           >
             {title}{" "}
-            {titleHighlight && <span className="gradient-text">{titleHighlight}</span>}
+            {titleHighlight && <span className="text-shimmer">{titleHighlight}</span>}
           </h2>
           {subtitle && (
             <p className="text-base leading-relaxed" style={{ color: "var(--text-muted)" }}>

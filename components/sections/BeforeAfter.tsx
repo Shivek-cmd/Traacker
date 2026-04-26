@@ -50,7 +50,7 @@ export default function BeforeAfter() {
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-text leading-tight font-display">
             Most Drivers Lose Money{" "}
-            <span className="gradient-text">Without Realizing It</span>
+            <span className="text-shimmer">Without Realizing It</span>
           </h2>
           <p className="mt-4 text-muted text-lg max-w-xl mx-auto">
             Here's what life looks like before and after Traacker.

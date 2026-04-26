@@ -34,7 +34,7 @@ function ServicesCTA() {
         </p>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-text mb-6 font-display">
           All Services. One Dispatcher.{" "}
-          <span className="gradient-text">No Upfront Cost.</span>
+          <span className="text-shimmer">No Upfront Cost.</span>
         </h2>
         <p className="text-muted text-lg max-w-xl mx-auto mb-10">
           You get the full Traacker dispatch operation — every service listed here — for a simple 5–10% commission on loads we book for you.

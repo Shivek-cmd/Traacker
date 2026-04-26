@@ -71,7 +71,7 @@ export default function CTA() {
           >
             If You're Serious About{" "}
             <br className="hidden sm:block" />
-            <span className="gradient-text-on-dark">Earning More,</span>
+            <span className="text-shimmer">Earning More,</span>
             <br />
             Let's Talk.
           </h2>

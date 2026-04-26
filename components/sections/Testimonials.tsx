@@ -204,7 +204,7 @@ export default function Testimonials() {
           </p>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-text leading-tight font-display">
             You're Not Just Another{" "}
-            <span className="gradient-text">Truck to Us</span>
+            <span className="text-shimmer">Truck to Us</span>
           </h2>
           <p className="mt-4 text-muted text-lg max-w-xl mx-auto">
             Here's what drivers and fleet owners say after making the switch.
