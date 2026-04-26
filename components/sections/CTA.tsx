@@ -9,57 +9,81 @@ export default function CTA() {
   const inView = useInView(ref, { once: true, margin: "-80px" })
 
   return (
-    <section id="contact" ref={ref} className="py-28 relative overflow-hidden bg-bg">
-      {/* Ambient glow — desktop only */}
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-100 rounded-full pointer-events-none hidden md:block"
-        style={{
-          background: "radial-gradient(ellipse, color-mix(in srgb, var(--primary) 12%, transparent) 0%, transparent 70%)",
-        }}
-        aria-hidden="true"
-      />
+    <section
+      id="contact"
+      ref={ref}
+      className="relative flex items-center justify-center overflow-hidden"
+      style={{ minHeight: "65vh" }}
+    >
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="w-full h-full object-cover"
+          aria-hidden="true"
+        >
+          {/* Replace with your own video asset — using hero placeholder for now */}
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
 
-      <div
-        className="absolute top-0 left-0 right-0 h-px"
-        style={{
-          background: "linear-gradient(to right, transparent, color-mix(in srgb, var(--primary) 40%, transparent), transparent)",
-        }}
-      />
+        {/* Dark overlay — heavier than hero for drama */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.82) 100%)",
+          }}
+        />
 
-      <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
+        {/* Edge vignette */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.7) 100%)",
+          }}
+        />
+      </div>
+
+      {/* Content */}
+      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center py-28">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
+          {/* Eyebrow */}
           <p
-            className="text-sm font-semibold uppercase tracking-widest mb-4"
+            className="text-sm font-semibold uppercase tracking-widest mb-6"
             style={{ color: "var(--primary)" }}
           >
             Let's Talk
           </p>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-text leading-tight mb-6 font-display">
+
+          {/* Headline */}
+          <h2
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.06] tracking-tight mb-6 font-display"
+            style={{ color: "var(--text-on-dark)" }}
+          >
             If You're Serious About{" "}
-            <span className="gradient-text">Earning More,</span>
+            <br className="hidden sm:block" />
+            <span className="gradient-text-on-dark">Earning More,</span>
             <br />
             Let's Talk.
           </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-            Stop wasting time chasing loads and negotiating alone. Let Traacker handle dispatch the way it should be done.
-          </p>
 
-          {/* Straight-talk box */}
-          <div
-            className="mb-10 p-5 rounded-xl max-w-xl mx-auto"
-            style={{
-              border: "1px solid var(--border)",
-              background: "color-mix(in srgb, var(--text) 2%, transparent)",
-            }}
+          {/* Sub-copy */}
+          <p
+            className="text-lg max-w-xl mx-auto mb-10 leading-relaxed"
+            style={{ color: "var(--text-muted-on-dark)" }}
           >
-            <p className="text-muted text-sm leading-relaxed">
-              <span className="text-text font-semibold">Let's be honest:</span> not every load will be perfect. Rates fluctuate. Challenges happen. But we stay consistent, communicate clearly, and always push for the best outcome.
-            </p>
-          </div>
+            Stop wasting time chasing loads and negotiating alone. Let Traacker
+            handle dispatch the way it should be done.
+          </p>
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -68,18 +92,25 @@ export default function CTA() {
               className="group btn-primary inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-base rounded-xl font-display"
             >
               Start Dispatching Today
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200" />
+              <ArrowRight
+                size={18}
+                className="group-hover:translate-x-1 transition-transform duration-200"
+              />
             </a>
             <a
               href="tel:+1-800-TRAACKER"
-              className="btn-outline inline-flex items-center gap-2 px-8 py-4 text-text font-semibold text-base rounded-xl font-display"
+              className="btn-outline-on-dark inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded-xl backdrop-blur-sm font-display"
             >
               <Phone size={16} />
               Talk to a Dispatcher
             </a>
           </div>
 
-          <p className="mt-8 text-subtle text-sm">
+          {/* Trust line */}
+          <p
+            className="mt-8 text-sm"
+            style={{ color: "var(--text-subtle-on-dark)" }}
+          >
             No upfront fees · 5–10% commission only · All equipment types welcome
           </p>
         </motion.div>

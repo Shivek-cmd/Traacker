@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import PageHero from "@/components/layout/PageHero"
-import ServicesGrid from "@/components/sections/ServicesGrid"
+import ServiceCardScroll from "@/components/sections/ServiceCardScroll"
 
 export const metadata: Metadata = {
   title: "Dispatch Services — Traacker",
@@ -19,7 +19,7 @@ export default function ServicesPage() {
         subtitle="From finding loads to handling paperwork, Traacker covers the full dispatch operation so you can focus on driving."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Services" }]}
       />
-      <ServicesGrid />
+      <ServiceCardScroll showHeader={false} />
       <ServicesCTA />
     </>
   )

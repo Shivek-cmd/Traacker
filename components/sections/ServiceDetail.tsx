@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2, Search, TrendingUp, Route, FileText, Headphones, LucideIcon } from "lucide-react"
 import type { Service } from "@/lib/services"
+import StickyScrollProcess from "./StickyScrollProcess"
 
 const iconMap: Record<string, LucideIcon> = {
   "load-sourcing": Search,
@@ -87,69 +88,15 @@ export default function ServiceDetail({ service }: { service: Service }) {
       </section>
 
       {/* Process */}
-      <section className="py-24 bg-bg-secondary relative">
-        <div
-          className="absolute top-0 left-0 right-0 h-px"
-          style={{
-            background:
-              "linear-gradient(to right, transparent, color-mix(in srgb, var(--primary) 20%, transparent), transparent)",
-          }}
-        />
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <Section>
-            <motion.div variants={fadeUp} className="text-center mb-14">
-              <p className="text-sm font-semibold uppercase tracking-widest mb-3" style={{ color: "var(--primary)" }}>
-                The Process
-              </p>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-text font-display">
-                How It <span className="gradient-text">Works</span>
-              </h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-              {/* Connecting line desktop */}
-              <div
-                className="hidden lg:block absolute top-[26px] left-[calc(12.5%+24px)] right-[calc(12.5%+24px)] h-px"
-                style={{
-                  background:
-                    "linear-gradient(to right, color-mix(in srgb, var(--primary) 30%, transparent), color-mix(in srgb, var(--primary) 60%, transparent), color-mix(in srgb, var(--primary) 30%, transparent))",
-                }}
-              />
-
-              {service.process.map((step, i) => (
-                <motion.div
-                  key={step.step}
-                  variants={fadeUp}
-                  className="flex flex-col items-center text-center gap-4"
-                >
-                  <div className="relative z-10">
-                    <div
-                      className="w-[52px] h-[52px] rounded-full flex items-center justify-center font-black text-lg font-display"
-                      style={{
-                        background: "color-mix(in srgb, var(--primary) 15%, transparent)",
-                        border: "2px solid color-mix(in srgb, var(--primary) 40%, transparent)",
-                        color: "var(--primary)",
-                      }}
-                    >
-                      {i + 1}
-                    </div>
-                  </div>
-                  <div>
-                    <div
-                      className="text-xs font-mono font-semibold mb-1"
-                      style={{ color: "color-mix(in srgb, var(--primary) 60%, transparent)" }}
-                    >
-                      {step.step}
-                    </div>
-                    <h3 className="text-text font-bold text-base font-display mb-2">{step.title}</h3>
-                    <p className="text-muted text-sm leading-relaxed">{step.body}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </Section>
-        </div>
-      </section>
+      <StickyScrollProcess
+        eyebrow="The Process"
+        title="How It"
+        titleHighlight="Works."
+        subtitle={`Here's exactly how we handle ${service.title.toLowerCase()} for your truck, step by step.`}
+        steps={service.process}
+        ctaPrimary={{ label: "Get Started Today", href: "/#contact" }}
+        ctaSecondary={{ label: "View All Services", href: "/services" }}
+      />
 
       {/* Outcomes */}
       <section className="py-24 bg-bg">
@@ -190,25 +137,25 @@ export default function ServiceDetail({ service }: { service: Service }) {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-bg-secondary relative">
-        <div
-          className="absolute top-0 left-0 right-0 h-px"
-          style={{
-            background:
-              "linear-gradient(to right, transparent, color-mix(in srgb, var(--primary) 30%, transparent), transparent)",
-          }}
-        />
-        <div className="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      {/* CTA — video background */}
+      <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "65vh" }}>
+        <div className="absolute inset-0 z-0">
+          <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover" aria-hidden="true">
+            <source src="/hero-video.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.82) 100%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.7) 100%)" }} />
+        </div>
+        <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 text-center py-28">
           <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--primary)" }}>
             Ready?
           </p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-text font-display mb-6">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight font-display mb-6" style={{ color: "var(--text-on-dark)" }}>
             Let's Put{" "}
-            <span className="gradient-text">{service.title}</span>{" "}
+            <span className="gradient-text-on-dark">{service.title}</span>{" "}
             to Work for You
           </h2>
-          <p className="text-muted text-lg mb-10">
+          <p className="text-lg mb-10 leading-relaxed" style={{ color: "var(--text-muted-on-dark)" }}>
             No upfront fees. Commission only. Get started in minutes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -221,11 +168,14 @@ export default function ServiceDetail({ service }: { service: Service }) {
             </Link>
             <Link
               href="/services"
-              className="btn-outline inline-flex items-center gap-2 px-8 py-4 text-text font-semibold text-base rounded-xl font-display"
+              className="btn-outline-on-dark inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded-xl backdrop-blur-sm font-display"
             >
               View All Services
             </Link>
           </div>
+          <p className="mt-8 text-sm" style={{ color: "var(--text-subtle-on-dark)" }}>
+            No upfront fees · 5–10% commission only · All equipment types welcome
+          </p>
         </div>
       </section>
     </>

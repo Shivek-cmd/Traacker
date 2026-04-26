@@ -40,10 +40,10 @@ export default function WhyUs() {
     <section id="why-us" ref={ref} className="py-28 relative overflow-hidden bg-bg">
       {/* Background grid — desktop only */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.025] hidden md:block"
+        className="absolute inset-0 pointer-events-none hidden md:block"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
           backgroundSize: "60px 60px",
         }}
         aria-hidden="true"

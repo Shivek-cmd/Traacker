@@ -24,11 +24,21 @@ export const metadata: Metadata = {
     "truck dispatch, owner operator dispatch, freight dispatch, load board, trucking dispatch service",
 }
 
+/* Inline script runs before React hydrates — prevents flash of wrong theme */
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})()`
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`}>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${manrope.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="grain page-grid font-body antialiased">
         <Navbar />
         <main>{children}</main>

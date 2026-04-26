@@ -2,8 +2,8 @@
 
 /* ══════════════════════════════════════════════════════════════
    TRAACKER — SINGLE SOURCE OF TRUTH
-   Change values in :root → every component updates automatically.
-   Never put brand colors, radii, or shadows in component files.
+   :root  = light mode (default)
+   .dark  = dark mode overrides (added to <html> by ThemeToggle)
    ══════════════════════════════════════════════════════════════ */
 
 :root {
@@ -11,99 +11,165 @@
   --primary:        #f97316;
   --primary-hover:  #ea6a00;
 
-  /* ── BACKGROUNDS ────────────────────────────────────────── */
-  --bg:             #0a0a0a;
-  --bg-secondary:   #111111;
-  --bg-tertiary:    #1a1a1a;
-  --bg-elevated:    #222222;
+  /* ── ALWAYS-ON-DARK TEXT (Hero video, dark overlays, etc.) ─
+     These NEVER change with the theme — always white-toned.
+     Use when the section background is always dark regardless
+     of light/dark mode (e.g. Hero with video overlay).      */
+  --text-on-dark:        rgba(255, 255, 255, 0.96);
+  --text-muted-on-dark:  rgba(255, 255, 255, 0.72);
+  --text-subtle-on-dark: rgba(255, 255, 255, 0.42);
+
+  /* ── BACKGROUNDS (warm off-white) ───────────────────────── */
+  --bg:             #f5f3ee;
+  --bg-secondary:   #ece9e2;
+  --bg-tertiary:    #e4e0d8;
+  --bg-elevated:    #fdfcfa;
 
   /* ── TEXT ───────────────────────────────────────────────── */
-  --text:           #f0f0f0;
-  --text-muted:     #888888;
-  --text-subtle:    #555555;
+  --text:           #1c1917;
+  --text-muted:     #57534e;
+  --text-subtle:    #a8a29e;
 
   /* ── BORDERS ────────────────────────────────────────────── */
-  --border:         rgba(255, 255, 255, 0.08);
-  --border-hover:   rgba(255, 255, 255, 0.16);
+  --border:         rgba(0, 0, 0, 0.08);
+  --border-hover:   rgba(0, 0, 0, 0.16);
+
+  /* ── NAVIGATION ─────────────────────────────────────────── */
+  --nav-bg:         rgba(228, 224, 216, 0.92);
+  --nav-text:       #1c1917;
+  --nav-link:       #44403c;
+  --nav-border:     rgba(0, 0, 0, 0.1);
+
+  /* ── GRID / GRAIN ───────────────────────────────────────── */
+  --grid-line:      rgba(0, 0, 0, 0.04);
 
   /* ── SEMANTIC ───────────────────────────────────────────── */
-  --success:        #22c55e;
-  --warning:        #f59e0b;
-  --error:          #ef4444;
+  --success:        #16a34a;
+  --warning:        #d97706;
+  --error:          #dc2626;
 
   /* ── RADIUS ─────────────────────────────────────────────── */
-  --radius-sm:      8px;
-  --radius-md:      12px;
-  --radius-lg:      16px;
-  --radius-xl:      24px;
-  --radius-2xl:     32px;
+  --radius-sm:  8px;
+  --radius-md:  12px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-2xl: 32px;
 
-  /* ── SHADOWS (tuned for the orange brand) ───────────────── */
-  --shadow-sm:      0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
-  --shadow-md:      0 4px 16px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.3);
-  --shadow-lg:      0 8px 32px rgba(0,0,0,0.6), 0 4px 12px rgba(0,0,0,0.4);
-  --shadow-xl:      0 20px 60px rgba(0,0,0,0.7), 0 8px 24px rgba(0,0,0,0.5);
-  --shadow-glow:    0 0 50px rgba(249, 115, 22, 0.4), 0 0 100px rgba(249, 115, 22, 0.15);
-  --shadow-card:    0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+  /* ── SHADOWS ────────────────────────────────────────────── */
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.05);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.1),  0 4px 12px rgba(0,0,0,0.06);
+  --shadow-xl:   0 20px 60px rgba(0,0,0,0.12), 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-glow: 0 0 50px rgba(249,115,22,0.2), 0 0 100px rgba(249,115,22,0.08);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.8);
 
   /* ── EASING ─────────────────────────────────────────────── */
-  --ease-out:       cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out:    cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-spring:    cubic-bezier(0.34, 1.56, 0.64, 1);
-  --dur-fast:       150ms;
-  --dur-base:       250ms;
-  --dur-slow:       400ms;
-  --dur-slower:     700ms;
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:    150ms;
+  --dur-base:    250ms;
+  --dur-slow:    400ms;
+  --dur-slower:  700ms;
 
   /* ── Z-INDEX ─────────────────────────────────────────────── */
-  --z-raised:       10;
-  --z-dropdown:     100;
-  --z-sticky:       200;
-  --z-overlay:      300;
-  --z-modal:        400;
-  --z-toast:        500;
+  --z-raised:   10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+}
+
+/* ── DARK MODE ──────────────────────────────────────────────── */
+.dark {
+  --bg:           #0a0a0a;
+  --bg-secondary: #111111;
+  --bg-tertiary:  #1a1a1a;
+  --bg-elevated:  #222222;
+
+  --text:         #f0f0f0;
+  --text-muted:   #a0a0a0;
+  --text-subtle:  #6e6e6e;
+
+  --border:       rgba(255, 255, 255, 0.08);
+  --border-hover: rgba(255, 255, 255, 0.16);
+
+  --nav-bg:     rgba(12, 12, 12, 0.92);
+  --nav-text:   #f0f0f0;
+  --nav-link:   #a8a29e;
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  --grid-line:  rgba(255, 255, 255, 0.025);
+
+  --success:  #22c55e;
+  --warning:  #f59e0b;
+  --error:    #ef4444;
+
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.5), 0 2px 6px rgba(0,0,0,0.3);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.6), 0 4px 12px rgba(0,0,0,0.4);
+  --shadow-xl:   0 20px 60px rgba(0,0,0,0.7), 0 8px 24px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 50px rgba(249,115,22,0.4), 0 0 100px rgba(249,115,22,0.15);
+  --shadow-card: 0 2px 8px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 /* ══════════════════════════════════════════════════════════════
-   TAILWIND v4 THEME — generates bg-*, text-*, border-*, font-*
-   utilities that point to the CSS variables above.
-   Change a value in :root and all Tailwind utilities update.
+   TAILWIND v4 THEME — fonts only (safe, never change at runtime)
    ══════════════════════════════════════════════════════════════ */
 
 @theme inline {
-  /* Typography */
   --font-display: var(--font-space-grotesk), "Space Grotesk", system-ui, sans-serif;
   --font-body:    var(--font-manrope), "Manrope", system-ui, sans-serif;
-
-  /* Colors */
-  --color-bg:           var(--bg);
-  --color-bg-secondary: var(--bg-secondary);
-  --color-bg-tertiary:  var(--bg-tertiary);
-  --color-bg-elevated:  var(--bg-elevated);
-  --color-text:         var(--text);
-  --color-muted:        var(--text-muted);
-  --color-subtle:       var(--text-subtle);
-  --color-primary:      var(--primary);
-  --color-border:       var(--border);
-  --color-border-hover: var(--border-hover);
-  --color-success:      var(--success);
-  --color-warning:      var(--warning);
-  --color-error:        var(--error);
-
 }
+
+/* ══════════════════════════════════════════════════════════════
+   EXPLICIT UTILITY OVERRIDES
+   These use live var() references — guaranteed to respond to
+   .dark class at runtime regardless of Tailwind build behavior.
+   Placed AFTER @import so they win the cascade.
+   ══════════════════════════════════════════════════════════════ */
+
+/* Backgrounds */
+.bg-bg           { background-color: var(--bg); }
+.bg-bg-secondary { background-color: var(--bg-secondary); }
+.bg-bg-tertiary  { background-color: var(--bg-tertiary); }
+.bg-bg-elevated  { background-color: var(--bg-elevated); }
+
+/* Text */
+.text-text   { color: var(--text); }
+.text-muted  { color: var(--text-muted); }
+.text-subtle { color: var(--text-subtle); }
+.text-primary { color: var(--primary); }
+
+/* Borders */
+.border-border       { border-color: var(--border); }
+.border-border-hover { border-color: var(--border-hover); }
+
+/* Hover variants */
+.hover\:bg-bg-secondary:hover { background-color: var(--bg-secondary); }
+.hover\:text-text:hover       { color: var(--text); }
+.hover\:text-primary:hover    { color: var(--primary); }
+.group:hover .group-hover\:text-primary { color: var(--primary); }
 
 /* ══════════════════════════════════════════════════════════════
    BASE
    ══════════════════════════════════════════════════════════════ */
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+html.dark { color-scheme: dark; }
 
 body {
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 ::selection { background: var(--primary); color: #fff; }
@@ -113,7 +179,7 @@ body {
 ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 2px; }
 
 /* ══════════════════════════════════════════════════════════════
-   TEXTURE — grain + architectural grid, always on globally
+   TEXTURE
    ══════════════════════════════════════════════════════════════ */
 
 .grain::after {
@@ -123,30 +189,39 @@ body {
   width: 200%;
   height: 200%;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.028;
+  opacity: 0.022;
   pointer-events: none;
   z-index: 9999;
 }
 
 .page-grid {
-  background-image: linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-image: linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
   background-size: 25% 100%;
   background-attachment: fixed;
 }
 
 /* ══════════════════════════════════════════════════════════════
-   UTILITIES — reference CSS vars, update everywhere on rebrand
+   UTILITIES
    ══════════════════════════════════════════════════════════════ */
 
-/* Gradient headline — uses --primary */
+/* Gradient headline — var(--text) adapts: near-black in light, white in dark */
 .gradient-text {
+  background: linear-gradient(135deg, var(--text) 0%, var(--primary) 55%, var(--primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient headline for always-dark sections (Hero video overlay).
+   First stop is always white regardless of theme mode.             */
+.gradient-text-on-dark {
   background: linear-gradient(135deg, #ffffff 0%, var(--primary) 55%, var(--primary-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Shimmer sweep — one word in hero only, never more */
+/* Shimmer */
 .text-shimmer {
   background: linear-gradient(
     90deg,
@@ -162,14 +237,12 @@ body {
   -webkit-text-fill-color: transparent;
   animation: shimmer-sweep 3.5s linear infinite;
 }
-
 @keyframes shimmer-sweep {
   0%   { background-position: 200% center; }
   100% { background-position: -200% center; }
 }
 
-/* ─── CTA BUTTONS — pure CSS, no JS hover handlers needed ── */
-/* Change --primary in :root → every button updates.          */
+/* ─── BUTTONS ──────────────────────────────────────────────── */
 .btn-primary {
   background: var(--primary);
   transition: background var(--dur-base) var(--ease-out),
@@ -183,33 +256,44 @@ body {
 }
 
 .btn-outline {
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--border-hover);
   transition: border-color var(--dur-base) var(--ease-out),
               background   var(--dur-base) var(--ease-out);
 }
 .btn-outline:hover {
-  border-color: color-mix(in srgb, var(--primary) 40%, transparent);
-  background: rgba(255, 255, 255, 0.05);
+  border-color: color-mix(in srgb, var(--primary) 50%, transparent);
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
 }
 
-/* Default dark card — hover border/glow uses --primary automatically */
+/* Outline button for always-dark sections (Hero, dark overlays).
+   Always white border + text regardless of theme mode.           */
+.btn-outline-on-dark {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: rgba(255, 255, 255, 0.92);
+  transition: border-color var(--dur-base) var(--ease-out),
+              background   var(--dur-base) var(--ease-out);
+}
+.btn-outline-on-dark:hover {
+  border-color: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── CARDS ─────────────────────────────────────────────────── */
 .card-dark {
   background: var(--bg-secondary);
   border: 1px solid var(--border);
   transition: border-color var(--dur-base) var(--ease-out),
-              box-shadow   var(--dur-base) var(--ease-out);
+              box-shadow   var(--dur-base) var(--ease-out),
+              background   var(--dur-base) var(--ease-out);
 }
 .card-dark:hover {
   border-color: color-mix(in srgb, var(--primary) 35%, transparent);
   box-shadow: 0 8px 40px color-mix(in srgb, var(--primary) 8%, transparent);
 }
 
-/* Brand glow — box shadow references --primary indirectly via --shadow-glow */
-.brand-glow {
-  box-shadow: var(--shadow-glow);
-}
+.brand-glow { box-shadow: var(--shadow-glow); }
 
-/* Logo marquee */
+/* ─── ANIMATIONS ────────────────────────────────────────────── */
 @keyframes marquee {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -220,10 +304,38 @@ body {
 }
 .animate-marquee:hover { animation-play-state: paused; }
 
+@keyframes scroll-up {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+@keyframes scroll-down {
+  0%   { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+.animate-scroll-up  { animation: scroll-up   28s linear infinite; will-change: transform; }
+.animate-scroll-down { animation: scroll-down 28s linear infinite; will-change: transform; }
+.animate-scroll-up:hover,
+.animate-scroll-down:hover { animation-play-state: paused; }
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* ─── SERVICE CARD SCROLL ───────────────────────────────── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+
+.service-card-panel {
+  transform: translateY(100%);
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.group:hover .service-card-panel {
+  transform: translateY(0);
 }

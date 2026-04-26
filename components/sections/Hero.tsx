@@ -32,21 +32,28 @@ export default function Hero() {
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
+
+        {/* Main overlay — fades to transparent at bottom so there's no
+            "white shadow" in light mode. The next section handles its own bg. */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.5) 50%, var(--bg) 100%)",
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.75) 45%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.20) 100%)"
           }}
         />
+
+        {/* Edge vignette */}
         <div
           className="absolute inset-0"
           style={{
-            background: "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)",
+            background:
+             "radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.80) 100%)",
           }}
         />
       </motion.div>
 
-      {/* Content */}
+      {/* Content — always on dark video, always uses --text-on-dark vars */}
       <motion.div
         style={{ y: textY }}
         className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 text-center"
@@ -58,8 +65,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
           style={{
-            border: "1px solid color-mix(in srgb, var(--primary) 30%, transparent)",
-            background: "color-mix(in srgb, var(--primary) 10%, transparent)",
+            border: "1px solid color-mix(in srgb, var(--primary) 40%, transparent)",
+            background: "color-mix(in srgb, var(--primary) 12%, transparent)",
           }}
         >
           <TrendingUp size={14} style={{ color: "var(--primary)" }} />
@@ -74,11 +81,13 @@ export default function Hero() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight font-display text-text"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold leading-[1.02] tracking-tight font-display"
+            style={{ color: "var(--text-on-dark)" }}
           >
             Keep Your Trucks{" "}
             <br className="hidden sm:block" />
-            <span className="gradient-text">Moving.</span>
+            {/* gradient-text-on-dark always starts white — readable over any dark video */}
+            <span className="gradient-text-on-dark">Moving.</span>
           </motion.h1>
         </div>
 
@@ -87,12 +96,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.55 }}
-          className="mt-6 text-lg sm:text-xl md:text-2xl leading-relaxed font-light"
-          style={{ color: "var(--text-muted)" }}
+          className="mt-6 text-lg sm:text-xl md:text-2xl leading-relaxed font-semibold"
+          style={{ color: "var(--text-muted-on-dark)" }}
         >
           Keep Your Revenue Growing.
           <br />
-          <span className="text-base sm:text-lg" style={{ color: "var(--text-subtle)" }}>
+          <span
+            className="text-base sm:text-lg font-normal"
+            style={{ color: "var(--text-muted-on-dark)", opacity: 0.82 }}
+          >
             We secure high-paying loads, negotiate hard, and manage everything — so you just drive.
           </span>
         </motion.p>
@@ -111,20 +123,22 @@ export default function Hero() {
             Dispatch My Truck
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200" />
           </a>
+          {/* btn-outline-on-dark: always white border/text, works on any dark bg */}
           <a
             href="#how-it-works"
-            className="btn-outline inline-flex items-center gap-2 px-8 py-4 text-text font-semibold text-base rounded-xl backdrop-blur-sm font-display"
+            className="btn-outline-on-dark inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded-xl backdrop-blur-sm font-display"
           >
             See How It Works
           </a>
         </motion.div>
 
-        {/* Trust bar */}
+        {/* Trust bar — always on dark video, always white-toned */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm text-subtle"
+          className="mt-16 flex flex-wrap items-center justify-center gap-8 text-sm"
+          style={{ color: "var(--text-subtle-on-dark)" }}
         >
           {[
             "No upfront cost",
@@ -154,12 +168,9 @@ export default function Hero() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
           className="w-6 h-10 rounded-full flex items-start justify-center pt-2"
-          style={{ border: "2px solid rgba(255,255,255,0.2)" }}
+          style={{ border: "2px solid rgba(255,255,255,0.25)" }}
         >
-          <div
-            className="w-1 h-2 rounded-full"
-            style={{ background: "var(--primary)" }}
-          />
+          <div className="w-1 h-2 rounded-full" style={{ background: "var(--primary)" }} />
         </motion.div>
       </motion.div>
     </section>

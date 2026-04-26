@@ -4,6 +4,8 @@ export type Service = {
   tagline: string
   body: string
   highlight: string
+  category: string
+  image: string
   meta: {
     title: string
     description: string
@@ -21,6 +23,8 @@ export const services: Service[] = [
     tagline: "Your truck should never sit idle.",
     body: "We find high-quality freight across DAT, Truckstop.com, and direct broker relationships — keeping your truck consistently loaded with profitable runs.",
     highlight: "Consistent load availability",
+    category: "DISPATCH",
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=840&q=80&fit=crop",
     meta: {
       title: "Load Sourcing & Booking — Traacker Dispatch",
       description:
@@ -90,6 +94,8 @@ export const services: Service[] = [
     tagline: "We don't settle for average.",
     body: "We negotiate directly with brokers on every single load. Better rates per mile, better weekly earnings — no guessing, no accepting lowball offers.",
     highlight: "Max per-mile earnings",
+    category: "RATES",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=840&q=80&fit=crop",
     meta: {
       title: "Rate Negotiation — Traacker Dispatch",
       description:
@@ -159,6 +165,8 @@ export const services: Service[] = [
     tagline: "More loaded miles. Less wasted fuel.",
     body: "We reduce deadhead miles, plan fuel-efficient corridors, and keep your schedule aligned with HOS regulations so you stay productive and compliant.",
     highlight: "Reduced empty miles",
+    category: "ROUTING",
+    image: "https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?w=600&h=840&q=80&fit=crop",
     meta: {
       title: "Route Optimization — Traacker Dispatch",
       description:
@@ -228,6 +236,8 @@ export const services: Service[] = [
     tagline: "We handle the paperwork so you stay on the road.",
     body: "BOL and POD handling, documentation, invoicing support — the admin work that slows drivers down is handled for you, completely.",
     highlight: "Full admin coverage",
+    category: "ADMIN",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=840&q=80&fit=crop",
     meta: {
       title: "Paperwork & Back Office Support — Traacker Dispatch",
       description:
@@ -297,6 +307,8 @@ export const services: Service[] = [
     tagline: "A dispatcher who actually knows your business.",
     body: "One point of contact who learns your lanes, preferences, and goals. Real-time updates. 24/7 availability. No rotating agents who don't know you.",
     highlight: "24/7 real-time support",
+    category: "SUPPORT",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=840&q=80&fit=crop",
     meta: {
       title: "Dedicated Dispatcher — Traacker Dispatch",
       description:
