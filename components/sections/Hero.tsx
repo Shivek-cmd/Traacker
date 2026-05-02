@@ -218,7 +218,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="#how-it-works"
+              href="/how-it-works"
               className="btn-outline inline-flex items-center gap-2 font-display font-semibold text-sm tracking-wide rounded-xl"
              style={{ padding: "14px 28px", color: "var(--text-on-dark)" }}
             >
