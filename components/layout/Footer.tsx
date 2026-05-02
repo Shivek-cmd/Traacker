@@ -21,18 +21,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12">
           {/* Brand */}
           <div className="md:col-span-2">
-             <div className="flex items-center gap-2 mb-4">
-              <div
-                className="w-9 h-9 rounded-lg flex items-center justify-center"
-                style={{ background: "var(--primary)" }}
-              >
-                <span className="text-white font-bold text-sm font-display">T</span>
-              </div>
-              <span className="font-bold text-xl tracking-tight text-text font-display">
-                Traa<span style={{ color: "var(--primary)" }}>kar</span>
+            <Link href="/" className="flex items-center gap-1.5 mb-4 w-fit">
+              <Image src="/Traakar_logo.png" alt="Traakar" width={40} height={40} className="h-10 w-auto" />
+              <span className="font-bold text-xl tracking-tight font-display" style={{ color: "var(--text)" }}>
+                Traakar
               </span>
-            </div>
-            <p className="text-muted text-sm leading-relaxed max-w-xs">
+            </Link>
+            <p className="text-sm leading-relaxed max-w-xs" style={{ color: "var(--text-muted)" }}>
               A smarter way to dispatch your trucks. We manage your freight so you can focus on driving and earning.
             </p>
             <p className="mt-4 text-sm font-medium" style={{ color: "color-mix(in srgb, var(--primary) 80%, transparent)" }}>
@@ -76,10 +71,14 @@ export default function Footer() {
                 <li key={s.slug}>
                   <Link
                     href={`/services/${s.slug}`}
-                    className="text-sm transition-colors duration-200 hover:opacity-100"
+                    className="group/link relative inline-block text-sm pb-0.5"
                     style={{ color: "var(--text-muted)" }}
                   >
                     {s.title}
+                    <span
+                      className="absolute bottom-0 left-0 w-full h-[1.5px] origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300"
+                      style={{ background: "var(--primary)" }}
+                    />
                   </Link>
                 </li>
               ))}
@@ -96,10 +95,14 @@ export default function Footer() {
                 <li key={l.href}>
                   <Link
                     href={l.href}
-                    className="text-sm transition-colors duration-200 hover:opacity-100"
+                    className="group/link relative inline-block text-sm pb-0.5"
                     style={{ color: "var(--text-muted)" }}
                   >
                     {l.label}
+                    <span
+                      className="absolute bottom-0 left-0 w-full h-[1.5px] origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300"
+                      style={{ background: "var(--primary)" }}
+                    />
                   </Link>
                 </li>
               ))}
@@ -118,17 +121,25 @@ export default function Footer() {
           <div className="flex items-center gap-5">
             <Link
               href="/privacy-policy"
-              className="text-xs transition-colors duration-150 hover:opacity-80"
+              className="group/link relative inline-block text-xs pb-0.5"
               style={{ color: "var(--text-subtle)" }}
             >
               Privacy Policy
+              <span
+                className="absolute bottom-0 left-0 w-full h-[1px] origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300"
+                style={{ background: "var(--primary)" }}
+              />
             </Link>
             <Link
               href="/terms-of-service"
-              className="text-xs transition-colors duration-150 hover:opacity-80"
+              className="group/link relative inline-block text-xs pb-0.5"
               style={{ color: "var(--text-subtle)" }}
             >
               Terms of Service
+              <span
+                className="absolute bottom-0 left-0 w-full h-[1px] origin-left scale-x-0 group-hover/link:scale-x-100 transition-transform duration-300"
+                style={{ background: "var(--primary)" }}
+              />
             </Link>
           </div>
         </div>

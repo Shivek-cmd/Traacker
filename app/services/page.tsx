@@ -6,6 +6,7 @@ import ServiceCardScroll from "@/components/sections/ServiceCardScroll"
 import Stats from "@/components/sections/Stats"
 import HowItWorks from "@/components/sections/HowItWorks"
 import WhyUs from "@/components/sections/WhyUs"
+import CTA from "@/components/sections/CTA"
 
 export const metadata: Metadata = {
   title: "Dispatch Services — Traakar",
@@ -195,51 +196,16 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <ServicesCTA />
+      <CTA
+        eyebrow="Ready to Get Started?"
+        headline="All Services. One Dispatcher."
+        headlineHighlight="No Upfront Cost."
+        subtext="You get the full Traakar dispatch operation — every service listed here — for a simple 5% commission on loads we book for you."
+        primaryLabel="Start Dispatching Today"
+        primaryHref="/contact-us"
+        secondaryLabel="View Pricing"
+        secondaryHref="/pricing"
+      />
     </>
-  )
-}
-
-function ServicesCTA() {
-  return (
-    <section className="relative flex items-center justify-center overflow-hidden" style={{ minHeight: "65vh" }}>
-      <div className="absolute inset-0 z-0">
-        <video autoPlay muted loop playsInline preload="auto" className="w-full h-full object-cover" aria-hidden="true">
-          <source src="/hero-video.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.82) 100%)" }} />
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.7) 100%)" }} />
-      </div>
-      <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center py-28">
-        <p className="text-sm font-semibold uppercase tracking-widest mb-4" style={{ color: "var(--primary)" }}>
-          Ready to Get Started?
-        </p>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight font-display mb-6" style={{ color: "var(--text-on-dark)" }}>
-          All Services. One Dispatcher.{" "}
-          <br className="hidden sm:block" />
-          <span className="gradient-text-on-dark">No Upfront Cost.</span>
-        </h2>
-        <p className="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style={{ color: "var(--text-muted-on-dark)" }}>
-          You get the full Traakar dispatch operation — every service listed here — for a simple 5–10% commission on loads we book for you.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/contact-us"
-            className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-base rounded-xl font-display"
-          >
-            Start Dispatching Today
-          </Link>
-          <Link
-            href="/pricing"
-            className="btn-outline-on-dark inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded-xl backdrop-blur-sm font-display"
-          >
-            View Pricing
-          </Link>
-        </div>
-        <p className="mt-8 text-sm" style={{ color: "var(--text-subtle-on-dark)" }}>
-          No upfront fees · 5–10% commission only · All equipment types welcome
-        </p>
-      </div>
-    </section>
   )
 }

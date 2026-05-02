@@ -2,11 +2,39 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import Link from "next/link"
 import { ArrowRight, Phone } from "lucide-react"
 
-export default function CTA() {
+interface CTAProps {
+  eyebrow?: string
+  headline?: string
+  headlineHighlight?: string
+  subtext?: string
+  primaryLabel?: string
+  primaryHref?: string
+  secondaryLabel?: string
+  secondaryHref?: string
+  trustLine?: string
+}
+
+const defaults: Required<CTAProps> = {
+  eyebrow: "Let's Talk",
+  headline: "If You're Serious About",
+  headlineHighlight: "Earning More, Let's Talk.",
+  subtext:
+    "Stop wasting time chasing loads and negotiating alone. Let Traakar handle dispatch the way it should be done.",
+  primaryLabel: "Start Dispatching Today",
+  primaryHref: "/contact-us",
+  secondaryLabel: "Talk to a Dispatcher",
+  secondaryHref: "tel:+15516553051",
+  trustLine: "No upfront fees · 5% flat commission · All equipment types welcome",
+}
+
+export default function CTA(props: CTAProps) {
+  const p = { ...defaults, ...props }
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: "-80px" })
+  const isPhone = p.secondaryHref.startsWith("tel:")
 
   return (
     <section
@@ -26,11 +54,8 @@ export default function CTA() {
           className="w-full h-full object-cover"
           aria-hidden="true"
         >
-          {/* Replace with your own video asset — using hero placeholder for now */}
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/cta-video.mp4" type="video/mp4" />
         </video>
-
-        {/* Dark overlay — heavier than hero for drama */}
         <div
           className="absolute inset-0"
           style={{
@@ -38,8 +63,6 @@ export default function CTA() {
               "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.72) 50%, rgba(0,0,0,0.82) 100%)",
           }}
         />
-
-        {/* Edge vignette */}
         <div
           className="absolute inset-0"
           style={{
@@ -56,62 +79,55 @@ export default function CTA() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          {/* Eyebrow */}
           <p
             className="text-sm font-semibold uppercase tracking-widest mb-6"
             style={{ color: "var(--primary)" }}
           >
-            Let's Talk
+            {p.eyebrow}
           </p>
 
-          {/* Headline */}
           <h2
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.06] tracking-tight mb-6 font-display"
             style={{ color: "var(--text-on-dark)" }}
           >
-            If You're Serious About{" "}
-            <br className="hidden sm:block" />
-            <span className="text-shimmer">Earning More,</span>
-            <br />
-            Let's Talk.
+            {p.headline}
+            {p.headlineHighlight && (
+              <>
+                <br className="hidden sm:block" />
+                <span className="text-shimmer">{p.headlineHighlight}</span>
+              </>
+            )}
           </h2>
 
-          {/* Sub-copy */}
           <p
             className="text-lg max-w-xl mx-auto mb-10 leading-relaxed"
             style={{ color: "var(--text-muted-on-dark)" }}
           >
-            Stop wasting time chasing loads and negotiating alone. Let Traakar
-            handle dispatch the way it should be done.
+            {p.subtext}
           </p>
 
-          {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:dispatch@Traakar.com"
+            <Link
+              href={p.primaryHref}
               className="group btn-primary inline-flex items-center gap-2 px-8 py-4 text-white font-bold text-base rounded-xl font-display"
             >
-              Start Dispatching Today
+              {p.primaryLabel}
               <ArrowRight
                 size={18}
                 className="group-hover:translate-x-1 transition-transform duration-200"
               />
-            </a>
-            <a
-              href="tel:+1-800-Traakar"
+            </Link>
+            <Link
+              href={p.secondaryHref}
               className="btn-outline-on-dark inline-flex items-center gap-2 px-8 py-4 font-semibold text-base rounded-xl backdrop-blur-sm font-display"
             >
-              <Phone size={16} />
-              Talk to a Dispatcher
-            </a>
+              {isPhone && <Phone size={16} />}
+              {p.secondaryLabel}
+            </Link>
           </div>
 
-          {/* Trust line */}
-          <p
-            className="mt-8 text-sm"
-            style={{ color: "var(--text-subtle-on-dark)" }}
-          >
-            No upfront fees · 5–10% commission only · All equipment types welcome
+          <p className="mt-8 text-sm" style={{ color: "var(--text-subtle-on-dark)" }}>
+            {p.trustLine}
           </p>
         </motion.div>
       </div>

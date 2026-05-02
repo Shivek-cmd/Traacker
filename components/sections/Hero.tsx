@@ -55,42 +55,55 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center overflow-hidden bg-bg"
+      className="relative min-h-screen"
+      style={{ background: "#000" }}
     >
       {/* ── FULL-BLEED VIDEO BACKGROUND ── */}
       <motion.div
         style={{ y: videoY }}
-        className="absolute inset-0 z-0 pointer-events-none scale-150"
+        className="absolute inset-0 z-0 pointer-events-none scale-125 origin-top-right"
       >
+        {/* scale-125 only on the video so overlays aren't distorted */}
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain scale-125"
           aria-hidden="true"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-
-        {/* Dark overlay so text stays legible */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-             "linear-gradient(105deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.80) 45%, rgba(0,0,0,0.65) 100%)"
-          }}
-        />
-
-        {/* Bottom fade to match page bg */}
-        <div
-          className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none"
-          style={{
-            background: "linear-gradient(to top, var(--bg) 0%, transparent 100%)",
-          }}
-        />
       </motion.div>
+
+      {/* Overlays — not inside the parallax so they stay crisp */}
+      {/* Top fade — blends hero into navbar */}
+      <div
+        className="absolute top-0 left-0 right-0 z-1 pointer-events-none"
+        style={{
+          height: "180px",
+          background: "linear-gradient(to bottom, rgba(0,0,0,0.72) 0%, transparent 100%)",
+        }}
+      />
+
+      {/* Main directional dark overlay */}
+      <div
+        className="absolute inset-0 z-1 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(105deg, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.76) 45%, rgba(0,0,0,0.55) 100%)",
+        }}
+      />
+
+      {/* Bottom fade — merges into page background */}
+      <div
+        className="absolute bottom-0 left-0 right-0 z-1 pointer-events-none"
+        style={{
+          height: "220px",
+          background: "linear-gradient(to top, var(--bg) 0%, transparent 100%)",
+        }}
+      />
 
       {/* Ambient glow — primary tint top-left */}
       <div
@@ -107,7 +120,7 @@ export default function Hero() {
 
       {/* ── MAIN LAYOUT — left-aligned content, full width ── */}
       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-16 xl:px-20">
-        <div className="flex flex-col justify-center min-h-screen pt-32 pb-24 lg:pt-0 lg:pb-0 max-w-3xl">
+        <div className="flex flex-col pt-28 pb-32 max-w-3xl">
 
           {/* Badge */}
           <motion.div
@@ -249,7 +262,7 @@ border: "1px solid var(--border-hover)",
         initial={{ opacity: 0, x: 40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.9, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
-       className="absolute right-10 bottom-12 z-20 hidden lg:flex flex-col items-center gap-4"
+       className="absolute right-10 bottom-40 z-20 hidden lg:flex flex-col items-center gap-4"
       >
         {/* Circle photo */}
         <div
@@ -300,12 +313,12 @@ border: "1px solid var(--border-hover)",
             minWidth: "160px",
           }}
         >
-          <p className="text-sm font-bold leading-tight" style={{ color: "var(--text-on-dark)" }}>Shaan Soni</p>
+          <p className="text-sm font-bold leading-tight" style={{ color: "var(--text-on-dark)" }}>Siddhant Soni</p>
           <p className="text-xs mt-0.5" style={{ color: "var(--primary)" }}>
-            Head Dispatcher
+           Owner
           </p>
           <p className="text-xs mt-0.5"  style={{ color: "var(--text-muted-on-dark)" }}>
-            8 yrs experience
+            15 yrs experience
           </p>
         </div>
        

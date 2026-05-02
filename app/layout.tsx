@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 }
 
 /* Inline script runs before React hydrates — prevents flash of wrong theme */
-const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.classList.add('dark');}catch(e){}})()`
+const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light')document.documentElement.classList.add('dark');}catch(e){document.documentElement.classList.add('dark');}})()`
 
 export default function RootLayout({
   children,

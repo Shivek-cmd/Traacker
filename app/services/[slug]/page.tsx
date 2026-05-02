@@ -3,6 +3,7 @@ import { notFound } from "next/navigation"
 import { getService, getAllSlugs } from "@/lib/services"
 import PageHero from "@/components/layout/PageHero"
 import ServiceDetail from "@/components/sections/ServiceDetail"
+import CTA from "@/components/sections/CTA"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -39,6 +40,16 @@ export default async function ServicePage({ params }: Props) {
         ]}
       />
       <ServiceDetail service={service} />
+      <CTA
+        eyebrow="Ready to Get Moving?"
+        headline="Your Truck Shouldn't Sit Idle."
+        headlineHighlight="Let's Change That."
+        subtext="Get a dedicated dispatcher working for you from day one. No upfront cost, no long-term commitment."
+        primaryLabel="Start Dispatching Today"
+        primaryHref="/contact-us"
+        secondaryLabel="See All Services"
+        secondaryHref="/services"
+      />
     </>
   )
 }
