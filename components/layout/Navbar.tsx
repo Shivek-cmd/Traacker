@@ -3,10 +3,22 @@
 import { useState, useEffect, useRef } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
-import Image from "next/image"
-import { Menu, X, ChevronDown, ArrowRight } from "lucide-react"
+import {
+  Menu, X, ChevronDown, ArrowRight,
+  Truck, TrendingUp, Navigation, FileText, Headphones, ShieldCheck, ClipboardCheck,
+} from "lucide-react"
 import ThemeToggle from "./ThemeToggle"
 import { services } from "@/lib/services"
+
+const categoryIcon: Record<string, React.ReactNode> = {
+  DISPATCH:   <Truck size={14} />,
+  RATES:      <TrendingUp size={14} />,
+  ROUTING:    <Navigation size={14} />,
+  ADMIN:      <FileText size={14} />,
+  SUPPORT:    <Headphones size={14} />,
+  VETTING:    <ShieldCheck size={14} />,
+  COMPLIANCE: <ClipboardCheck size={14} />,
+}
 
 const navLinks = [
   { label: "Services", href: "/services", hasDropdown: true },
@@ -62,7 +74,7 @@ export default function Navbar() {
           }}
         >
           {/* Logo */}
-       <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <Link href="/" className="flex items-center gap-2 group shrink-0">
             <div
               className="w-8 h-8 rounded-lg flex items-center justify-center"
               style={{ background: "var(--primary)" }}
@@ -75,16 +87,14 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-7">
+          <nav className="hidden md:flex items-center gap-7 relative">
             {navLinks.map((link) =>
               link.hasDropdown ? (
                 <div
                   key={link.href}
-                  className="relative"
                   onMouseEnter={openDropdown}
                   onMouseLeave={scheduleClose}
                 >
-                  {/* Services trigger with animated underline */}
                   <Link
                     href={link.href}
                     className="group/link relative text-sm font-medium flex items-center gap-1 pb-0.5"
@@ -101,93 +111,8 @@ export default function Navbar() {
                       style={{ background: "var(--primary)" }}
                     />
                   </Link>
-
-                  <AnimatePresence>
-                    {dropdownOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: 6, scale: 0.98 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, y: 6, scale: 0.98 }}
-                        transition={{ duration: 0.16 }}
-                        className="absolute top-full pt-3"
-                        style={{ left: "50%", transform: "translateX(-50%)", width: "520px" }}
-                      >
-                        <div
-                          className="rounded-2xl overflow-hidden p-2"
-                          style={{
-                            background: "var(--nav-bg)",
-                            backdropFilter: "blur(24px)",
-                            WebkitBackdropFilter: "blur(24px)",
-                            border: "1px solid var(--nav-border)",
-                            boxShadow: "0 16px 48px rgba(0,0,0,0.18)",
-                          }}
-                        >
-                          {/* 2-column grid: 3 left, 2 + View All right */}
-                          <div className="grid grid-cols-2 gap-0.5">
-                            {services.map((s) => (
-                              <Link
-                                key={s.slug}
-                                href={`/services/${s.slug}`}
-                                onClick={() => setDropdownOpen(false)}
-                                className="flex items-start gap-3 p-3 rounded-xl transition-all duration-150 group/item"
-                                style={{ color: "var(--text)" }}
-                              >
-                                <div
-                                  className="shrink-0 mt-0.5 px-1.5 py-0.5 rounded font-bold font-display whitespace-nowrap"
-                                  style={{
-                                    background: "color-mix(in srgb, var(--primary) 12%, transparent)",
-                                    color: "var(--primary)",
-                                    fontSize: "0.6rem",
-                                    letterSpacing: "0.07em",
-                                  }}
-                                >
-                                  {s.category}
-                                </div>
-                                <div className="flex flex-col gap-0.5 min-w-0">
-                                  <span className="text-sm font-semibold font-display leading-tight" style={{ color: "var(--text)" }}>
-                                    {s.title}
-                                  </span>
-                                  <span className="text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
-                                    {s.tagline}
-                                  </span>
-                                </div>
-                              </Link>
-                            ))}
-
-                            {/* 6th slot — View All */}
-                            <Link
-                              href="/services"
-                              onClick={() => setDropdownOpen(false)}
-                              className="flex items-center gap-2 p-3 rounded-xl transition-all duration-150 group/all"
-                              style={{
-                                border: "1px dashed color-mix(in srgb, var(--primary) 35%, transparent)",
-                                background: "color-mix(in srgb, var(--primary) 4%, transparent)",
-                              }}
-                            >
-                              <div className="flex flex-col gap-0.5 min-w-0">
-                                <span
-                                  className="text-sm font-bold font-display leading-tight flex items-center gap-1.5"
-                                  style={{ color: "var(--primary)" }}
-                                >
-                                  View All Services
-                                  <ArrowRight
-                                    size={13}
-                                    className="-translate-x-0.5 group-hover/all:translate-x-0.5 transition-transform duration-200"
-                                  />
-                                </span>
-                                <span className="text-xs" style={{ color: "var(--text-muted)" }}>
-                                  Full service overview
-                                </span>
-                              </div>
-                            </Link>
-                          </div>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
                 </div>
               ) : (
-                /* Regular nav links with animated underline */
                 <Link
                   key={link.href}
                   href={link.href}
@@ -202,6 +127,134 @@ export default function Navbar() {
                 </Link>
               )
             )}
+
+            {/* Mega menu — anchored to the nav's left edge (under "Services") */}
+            <AnimatePresence>
+              {dropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10, scale: 0.97 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  exit={{ opacity: 0, y: 10, scale: 0.97 }}
+                  transition={{ duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute top-full pt-3"
+                  style={{ left: -100, width: "760px" }}
+                  onMouseEnter={openDropdown}
+                  onMouseLeave={scheduleClose}
+                >
+                  <div
+                    className="rounded-2xl overflow-hidden flex"
+                    style={{
+                      background: "var(--bg-elevated)",
+                      border: "1px solid var(--nav-border)",
+                      boxShadow: "0 24px 64px rgba(0,0,0,0.18), 0 4px 20px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    {/* Left accent panel */}
+                    <div
+                      className="w-52 shrink-0 flex flex-col justify-between p-6"
+                      style={{
+                        background: "linear-gradient(150deg, #1c1917 0%, #292524 100%)",
+                        borderRight: "1px solid rgba(255,255,255,0.06)",
+                      }}
+                    >
+                      <div className="flex flex-col gap-3">
+                        <span
+                          className="text-[10px] font-bold tracking-[0.18em] uppercase"
+                          style={{ color: "var(--primary)" }}
+                        >
+                          Our Services
+                        </span>
+                        <p className="text-[15px] font-bold font-display leading-snug text-white">
+                          Everything you need to run a profitable truck.
+                        </p>
+                        <p className="text-[11px] leading-relaxed" style={{ color: "rgba(255,255,255,0.42)" }}>
+                          Seven services. One dedicated dispatcher. Zero dead miles.
+                        </p>
+                      </div>
+
+                      <div className="flex flex-col gap-3 mt-8">
+                        <Link
+                          href="/services"
+                          onClick={() => setDropdownOpen(false)}
+                          className="group/all inline-flex items-center gap-1.5 text-sm font-bold transition-colors duration-150"
+                          style={{ color: "var(--primary)" }}
+                        >
+                          View All Services
+                          <ArrowRight
+                            size={13}
+                            className="group-hover/all:translate-x-0.5 transition-transform duration-200"
+                          />
+                        </Link>
+                        <div
+                          className="flex items-center gap-2 text-[10px]"
+                          style={{ color: "rgba(255,255,255,0.28)" }}
+                        >
+                          <span>5+ years</span>
+                          <span
+                            className="w-1 h-1 rounded-full"
+                            style={{ background: "rgba(255,255,255,0.28)" }}
+                          />
+                          <span>200+ drivers</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right services grid */}
+                    <div className="flex-1 p-3">
+                      <div className="grid grid-cols-2 gap-0.5">
+                        {services.map((s, i) => {
+                          const isLast = i === services.length - 1 && services.length % 2 !== 0
+                          return (
+                            <Link
+                              key={s.slug}
+                              href={`/services/${s.slug}`}
+                              onClick={() => setDropdownOpen(false)}
+                              className={`group/item flex items-start gap-3 p-3 rounded-xl transition-all duration-150${isLast ? " col-span-2" : ""}`}
+                              style={{ color: "var(--text)" }}
+                              onMouseEnter={(e) => {
+                                ;(e.currentTarget as HTMLElement).style.background = "var(--bg-secondary)"
+                              }}
+                              onMouseLeave={(e) => {
+                                ;(e.currentTarget as HTMLElement).style.background = ""
+                              }}
+                            >
+                              <div
+                                className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center mt-0.5"
+                                style={{
+                                  background: "color-mix(in srgb, var(--primary) 12%, transparent)",
+                                  color: "var(--primary)",
+                                }}
+                              >
+                                {categoryIcon[s.category] ?? <ArrowRight size={14} />}
+                              </div>
+                              <div className="flex flex-col gap-0.5 min-w-0">
+                                <span
+                                  className="text-sm font-semibold font-display leading-snug"
+                                  style={{ color: "var(--text)" }}
+                                >
+                                  {s.title}
+                                </span>
+                                <span
+                                  className="text-xs leading-relaxed"
+                                  style={{ color: "var(--text-muted)" }}
+                                >
+                                  {s.tagline}
+                                </span>
+                              </div>
+                              <ArrowRight
+                                size={12}
+                                className="ml-auto shrink-0 self-center opacity-0 group-hover/item:opacity-100 -translate-x-1 group-hover/item:translate-x-0 transition-all duration-150"
+                                style={{ color: "var(--primary)" }}
+                              />
+                            </Link>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </nav>
 
           {/* Right side — toggle + CTA */}
@@ -256,7 +309,7 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col items-center justify-center flex-1 gap-6 pb-16 overflow-y-auto px-6">
-              {/* Services with accordion */}
+              {/* Services accordion */}
               <div className="flex flex-col items-center w-full max-w-sm gap-0">
                 <button
                   onClick={() => setMobileServicesOpen((v) => !v)}

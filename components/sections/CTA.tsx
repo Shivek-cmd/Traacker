@@ -41,7 +41,7 @@ export default function CTA(props: CTAProps) {
       id="contact"
       ref={ref}
       className="relative flex items-center justify-center overflow-hidden"
-      style={{ minHeight: "65vh" }}
+      style={{ minHeight: "95vh" }}
     >
       {/* Video background */}
       <div className="absolute inset-0 z-0">
