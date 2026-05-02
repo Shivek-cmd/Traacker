@@ -61,16 +61,15 @@ export default function Hero() {
       {/* ── FULL-BLEED VIDEO BACKGROUND ── */}
       <motion.div
         style={{ y: videoY }}
-        className="absolute inset-0 z-0 pointer-events-none scale-125 origin-top-right"
+        className="absolute inset-0 z-0 pointer-events-none"
       >
-        {/* scale-125 only on the video so overlays aren't distorted */}
         <video
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-          className="w-full h-full object-contain scale-125"
+          className="w-full h-full object-cover scale-110"
           aria-hidden="true"
         >
           <source src="/hero-video.mp4" type="video/mp4" />
